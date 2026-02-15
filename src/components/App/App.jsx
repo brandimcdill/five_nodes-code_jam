@@ -14,7 +14,12 @@ function App() {
   return (
     <div className="page__content">
         <Routes>
+          <Header />
             <Route path="/" element={<CalendarComponent onChange={setDate}/>} />
+            
+            <Cards />
+            <People />
+            <Footer />
         </Routes>
     </div>
   )
