@@ -59,17 +59,17 @@
         <!-- Second screen ends -->
       </main>
       <footer class="footer"></footer>
+      <!-- TODO - Create id and for attributes for modals -->
+      <!-- Note* The Edit Person Modal is essentially going to have the same modal structure as the Create New Person modal, except it will have a discard button in the top right corner and the lower right button will have the string "Save" -->
+      <!-- Create New Person modal begins here -->
       <div class="modal" id="create-new-person">
-        <!-- TODO - Create id and for attributes for modals -->
-        <!-- Note* The Edit Person Modal is essentially going to have the following modal structure, except it will have a discard button in the top right corner -->
-        <!-- Create New Person modal begins here -->
         <div class="modal__container">
           <h2 class="modal__title">Create New Person</h2>
           <form id="" action="" class="modal__form" novalidate>
-            <label for="" class="modal__label"
+            <label for="person-name-input" class="modal__label"
               >Person Name
               <input
-                id=""
+                id="person-name-input"
                 type="text"
                 class="modal__input"
                 name="name"
@@ -80,10 +80,10 @@
               />
               <span class="modal__error"></span>
             </label>
-            <label for="" class="modal__label">
+            <label for="person-nickname-input" class="modal__label">
               Nickname (optional)
               <input
-                id=""
+                id="person-nickname-input"
                 type="text"
                 class="modal__input"
                 name="name"
@@ -92,25 +92,78 @@
                 maxlength="40"
               />
             </label>
-            <label for="" class="modal__label">
+            <label for="person-avatar" class="modal__label">
               Avatar (optional)
               <input
-                id=""
+                id="person-avatar"
                 type="url"
                 class="modal__input"
                 name="link"
                 placeholder=""
               />
             </label>
-            <button class="modal__cancel-btn">
-              <img src="" alt="" class="modal__cancel-btn-image" />
+            <button class="modal__btn modal__btn-cancel">
+              <img src="" alt="Cross mark" class="modal__cancel-btn-image" />
               Cancel
             </button>
-            <button class="modal__create-btn">Create</button>
+            <button class="modal__btn modal__btn-create">Create</button>
           </form>
-          <!-- Create New Person modal ends here -->
         </div>
       </div>
+      <!-- Create New Person modal ends here -->
+      <!-- Edit Person modal begins here -->
+      <div class="modal" id="edit-person">
+        <div class="modal__container">
+          <button type="button" class="modal__btn modal__btn-discard">
+            <img src="" alt="" class="modal__discard-btn-image" />
+          </button>
+          <h2 class="modal__title">Edit Person</h2>
+          <form id="" action="" class="modal__form" novalidate>
+            <label for="edit-person-name-input" class="modal__label"
+              >Person Name
+              <input
+                id="edit-person-name-input"
+                type="text"
+                class="modal__input"
+                name="name"
+                placeholder="e.g., Juan"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <span class="modal__error"></span>
+            </label>
+            <label for="edit-person-nickname-input" class="modal__label">
+              Nickname (optional)
+              <input
+                id="edit-person-nickname-input"
+                type="text"
+                class="modal__input"
+                name="name"
+                placeholder="e.g., best friend"
+                minlength="2"
+                maxlength="40"
+              />
+            </label>
+            <label for="edit-person-avatar" class="modal__label">
+              Avatar (optional)
+              <input
+                id="edit-person-avatar"
+                type="url"
+                class="modal__input"
+                name="link"
+                placeholder=""
+              />
+            </label>
+            <button class="modal__btn modal__btn-cancel">
+              <img src="" alt="Cross mark" class="modal__cancel-btn-image" />
+              Cancel
+            </button>
+            <button class="modal__btn modal__btn-save">Save</button>
+          </form>
+        </div>
+      </div>
+      <!-- Edit Person modal ends here -->
     </div>
   </body>
 </html>
