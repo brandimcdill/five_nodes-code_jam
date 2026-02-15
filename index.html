@@ -4,10 +4,113 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hello-vite</title>
+    <!-- Remove the link to styles.css once done -->
+    <link rel="stylesheet" href="styles.css" />
+    <title>Paper Thoughts</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <div class="page">
+      <!-- First screen begins-->
+      <!-- Header section begins -->
+      <header class="header">
+        <div class="header__container">
+          <img src="" alt="Paper plane logo" class="header__logo" />
+          <h1 class="header__title">Paper Thoughts</h1>
+        </div>
+        <p class="header__description">
+          Weekly memories for the people you care about.
+        </p>
+      </header>
+      <!-- Header section ends -->
+      <main class="content">
+        <!-- Your people section begins -->
+        <section class="your-people">
+          <h2 class="your-people__title">Your People</h2>
+          <button type="button" class="your-people__add-btn">
+            <img src="" alt="" class="your-people__add-btn-image" />
+            <p class="your-people__add-btn-text">New Person</p>
+          </button>
+        </section>
+        <!-- Your people section ends -->
+        <!-- Cards section begins -->
+        <section class="cards">
+          <div class="cards__container">
+            <img src="" alt="" class="cards__avatar" />
+            <div class="cards__information">
+              <div class="cards__description">
+                <h3 class="cards__name"></h3>
+                <p class="cards__title"></p>
+              </div>
+              <div class="cards__button-container">
+                <button type="button" class="cards__button">
+                  <img src="" alt="" class="cards__button-plane-image" />
+                  Tap to open
+                </button>
+              </div>
+            </div>
+            <img src="" alt="" class="cards__button-pencil-image" />
+          </div>
+        </section>
+        <!-- Cards section ends -->
+        <!-- First screen ends -->
+        <!-- Second screen begins -->
+        <!-- Second screen ends -->
+      </main>
+      <footer class="footer"></footer>
+      <div class="modal" id="create-new-person">
+        <!-- TODO - Create id and for attributes for modals -->
+        <!-- Note* The Edit Person Modal is essentially going to have the following modal structure, except it will have a discard button in the top right corner -->
+        <!-- Create New Person modal begins here -->
+        <div class="modal__container">
+          <h2 class="modal__title">Create New Person</h2>
+          <form id="" action="" class="modal__form" novalidate>
+            <label for="" class="modal__label"
+              >Person Name
+              <input
+                id=""
+                type="text"
+                class="modal__input"
+                name="name"
+                placeholder="e.g., Juan"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <span class="modal__error"></span>
+            </label>
+            <label for="" class="modal__label">
+              Nickname (optional)
+              <input
+                id=""
+                type="text"
+                class="modal__input"
+                name="name"
+                placeholder="e.g., best friend"
+                minlength="2"
+                maxlength="40"
+              />
+            </label>
+            <label for="" class="modal__label">
+              Avatar (optional)
+              <input
+                id=""
+                type="url"
+                class="modal__input"
+                name="link"
+                placeholder=""
+              />
+            </label>
+            <button class="modal__cancel-btn">
+              <img src="" alt="" class="modal__cancel-btn-image" />
+              Cancel
+            </button>
+            <button class="modal__create-btn">Create</button>
+          </form>
+          <!-- Create New Person modal ends here -->
+        </div>
+      </div>
+    </div>
   </body>
 </html>
