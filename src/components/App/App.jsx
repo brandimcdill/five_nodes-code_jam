@@ -5,6 +5,7 @@ import CalendarComponent from "../Calendar/Calendar";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [date, setDate] = useState(new Date());
 
   return (
     <div className="page__content">
@@ -14,3 +15,4 @@ function App() {
     </div>
   )
 }
+export default App;
