@@ -5,6 +5,8 @@ import Cards from "../Cards/Cards";
 import People from "../People/People";
 import Footer from "../Footer/Footer";
 import Landing from "../Landing/Landing";
+import { getPerson, createPerson, getPeople, getCalendar, deletePerson } from "../../Utils/API";
+
 
 import CalendarComponent from "../Calendar/Calendar";
 
@@ -13,6 +15,9 @@ function App() {
   const [modal, setModal] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [date, setDate] = useState(new Date());
+  const [people, setPeople] = useState([]);
+
+  const handlePersonClick = (person) => {
 
   return (
     <div className="page">
