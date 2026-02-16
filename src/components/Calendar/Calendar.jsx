@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Calendar from "react-calendar";
 
-function CalendarComponent(onChange) {
+function CalendarComponent({ onChange, activeModal, selectedCard }) {
   const [date, setDate] = useState(new Date());
   const config = useState({
     onChange: setDate,
@@ -10,7 +10,13 @@ function CalendarComponent(onChange) {
   });
   return (
     <div className="calendar-container">
-      <Calendar {...config} OnChange={onChange} value={date} />
+      <Calendar
+        {...config}
+        onChange={onChange}
+        value={date}
+        activeModal={activeModal}
+        selectedCard={selectedCard}
+      />
     </div>
   );
 }
