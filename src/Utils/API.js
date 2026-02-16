@@ -63,4 +63,12 @@ function deletePerson(id) {
 }
 
 function createMemory()
-export { createPerson, getPerson, getPeople, getCalendar, deletePerson, checkResponse };
+
+export {
+  createPerson,
+  getPerson,
+  getPeople,
+  getCalendar,
+  deletePerson,
+  checkResponse,
+};
