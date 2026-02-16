@@ -12,6 +12,7 @@ import {
   getCalendar,
   deletePerson,
 } from "../../Utils/API";
+import { signIn, signout, signUp, setToken, getToken } from "../../Utils/auth";
 
 import CalendarComponent from "../Calendar/Calendar";
 
