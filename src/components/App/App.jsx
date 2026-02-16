@@ -25,11 +25,25 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [date, setDate] = useState(new Date());
   const [people, setPeople] = useState([]);
+  const [selectedCard, setSelectedCard] = useState(null);
 
   const handleCardClick = (card) => {
     setActiveModal(card);
   };
-
+  const handleAddConnectionClick = () => {
+    setActiveModal("addConnection");
+  };
+  const handleDeleteConnectionClick = (card) => {
+    deletePerson(card.id)
+      .then(() => {
+        setPeople((prevPeople) =>
+          prevPeople.filter((person) => person.id !== card.id),
+        );
+      })
+      .catch((error) => {
+        console.error("Error deleting person:", error);
+      });
+  };
   const handleNewMemory = (memoryData) => {
     createMemory(
       memoryData.title,
@@ -57,17 +71,38 @@ export default function App() {
         console.error("Error creating memory:", error);
       });
   };
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9e05bf0a63f029edcad5cd4196140c0df9f5167f
   return (
     <div className="page">
       <div className="page__content">
         <Header />
         <Routes>
           <Route path="/landing" element={<Landing />} />
-          <Route path="/" element={<CalendarComponent onChange={setDate} />} />
+          <Route
+            path="/"
+            element={
+              <CalendarComponent
+                onChange={setDate}
+                activeModal={activeModal}
+                selectedCard={selectedCard}
+                value={date}
+                handleNewMemory={handleNewMemory}
+              />
+            }
+          />
         </Routes>
-        <Cards />
-        <People />
+        <Cards
+          handleDeleteConnectionClick={handleDeleteConnectionClick}
+          onClick={handleCardClick}
+          card={selectedCard}
+        />
+        <People
+          handleDeleteConnectionClick={handleDeleteConnectionClick}
+          selectedCard={selectedCard}
+        />
         <Footer />
       </div>
     </div>
