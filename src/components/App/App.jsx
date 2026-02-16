@@ -19,8 +19,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/landing" element={<Landing />} />
-        <Route path="/calendar" element={<CalendarComponent onChange={setDate} />} />
-        
+        <Route path="/" element={<CalendarComponent onChange={setDate} />} />
       </Routes>
       <Cards />
       <People />
