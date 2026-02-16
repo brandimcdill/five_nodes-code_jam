@@ -56,23 +56,20 @@ export default function App() {
       .catch((error) => {
         console.error("Error creating memory:", error);
       });
-
-    return (
-      <div className="page">
-        <div className="page__content">
-          <Header />
-          <Routes>
-            <Route path="/landing" element={<Landing />} />
-            <Route
-              path="/"
-              element={<CalendarComponent onChange={setDate} />}
-            />
-          </Routes>
-          <Cards />
-          <People />
-          <Footer />
-        </div>
-      </div>
-    );
   };
+
+  return (
+    <div className="page">
+      <div className="page__content">
+        <Header />
+        <Routes>
+          <Route path="/landing" element={<Landing />} />
+          <Route path="/" element={<CalendarComponent onChange={setDate} />} />
+        </Routes>
+        <Cards />
+        <People />
+        <Footer />
+      </div>
+    </div>
+  );
 }
