@@ -11,12 +11,15 @@ import {
   getPeople,
   getCalendar,
   deletePerson,
+  createMemory,
 } from "../../Utils/API";
 import { signIn, signout, signUp, setToken, getToken } from "../../Utils/auth";
+import { AuthProvider } from "../../Utils/Contexts/AuthContext";
+import { UserContext } from "../../Utils/Contexts/UserContext";
 
 import CalendarComponent from "../Calendar/Calendar";
 
-function App() {
+export default function App() {
   const [page, setPage] = useState("landing");
   const [activeModal, setActiveModal] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -27,20 +30,49 @@ function App() {
     setActiveModal(card);
   };
 
-  return (
-    <div className="page">
-      <div className="page__content">
-        <Header />
-        <Routes>
-          <Route path="/landing" element={<Landing />} />
-          <Route path="/" element={<CalendarComponent onChange={setDate} />} />
-        </Routes>
-        <Cards />
-        <People />
-        <Footer />
-      </div>
-    </div>
-  );
-}
+  const handleNewMemory = (memoryData) => {
+    createMemory(
+      memoryData.title,
+      memoryData.note,
+      memoryData.date,
+      memoryData.personId,
+      memoryData.link,
+      memoryData.imageUrl,
+    )
+      .then((newMemory) => {
+        // Update the state to include the new memory
+        setPeople((prevPeople) => {
+          return prevPeople.map((person) => {
+            if (person.id === memoryData.personId) {
+              return {
+                ...person,
+                memories: [...person.memories, newMemory],
+              };
+            }
+            return person;
+          });
+        });
+      })
+      .catch((error) => {
+        console.error("Error creating memory:", error);
+      });
 
-export default App;
+    return (
+      <div className="page">
+        <div className="page__content">
+          <Header />
+          <Routes>
+            <Route path="/landing" element={<Landing />} />
+            <Route
+              path="/"
+              element={<CalendarComponent onChange={setDate} />}
+            />
+          </Routes>
+          <Cards />
+          <People />
+          <Footer />
+        </div>
+      </div>
+    );
+  };
+}
