@@ -6,6 +6,7 @@ import People from "../People/People";
 import Footer from "../Footer/Footer";
 import Landing from "../Landing/Landing";
 import { getPerson, createPerson, getPeople, getCalendar, deletePerson } from "../../Utils/API";
+import { signIn, signout, signUp, setToken, getToken} from "../../Utils/auth";
 
 
 import CalendarComponent from "../Calendar/Calendar";
@@ -17,7 +18,7 @@ function App() {
   const [date, setDate] = useState(new Date());
   const [people, setPeople] = useState([]);
 
-  const handlePersonClick = (person) => {
+  const handlePersonClick = (person) => {}
 
   return (
     <div className="page__content">

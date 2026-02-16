@@ -31,10 +31,10 @@ function signIn(data){
       }).then(checkResponse);
 }
 
-function signOut(){
+function signout(){
     localStorage.removeItem("jwt");
     localStorage.removeItem("user");
     return Promise.resolve();
 }
 
-export { getToken, setToken, signUp, signIn, signOut };
+export { getToken, setToken, signUp, signIn, signout };
