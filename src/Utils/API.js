@@ -62,5 +62,16 @@ function deletePerson(id) {
   }).then(checkResponse);
 }
 
-function createMemory()
-export { createPerson, getPerson, getPeople, getCalendar, deletePerson, checkResponse };
+function createMemory(title, note, date, personId, link, imageUrl){
+    return fetch(`${baseUrl}/memories`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${getToken()}`,
+        },
+        body: JSON.stringify({ title, note, date, personId, link, imageUrl }),
+      }).then(checkResponse);
+}
+
+export { createPerson, getPerson, getPeople, getCalendar, deletePerson, checkResponse, createMemory };
