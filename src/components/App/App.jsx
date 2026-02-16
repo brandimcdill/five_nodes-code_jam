@@ -5,6 +5,7 @@ import Cards from "../Cards/Cards";
 import People from "../People/People";
 import Footer from "../Footer/Footer";
 import Landing from "../Landing/Landing";
+import NavBar from "../NavBar/NavBar";
 import {
   getPerson,
   createPerson,
@@ -74,6 +75,7 @@ export default function App() {
   return (
     <div className="page">
       <div className="page__content">
+        <NavBar />
         <Header />
         <Routes>
           <Route path="/landing" element={<Landing />} />
