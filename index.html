@@ -17,10 +17,10 @@
 
       <div class="modal" id="create-new-person">
         <div class="modal__container">
-          <h2 class="modal__title">Create New Person</h2>
+          <h2 class="modal__title">Create New Connection</h2>
           <form id="" action="" class="modal__form" novalidate>
             <label for="person-name-input" class="modal__label"
-              >Person Name
+              >Person Name<sup>*</sup>
               <input
                 id="person-name-input"
                 type="text"
@@ -34,7 +34,7 @@
               <span class="modal__error"></span>
             </label>
             <label for="person-nickname-input" class="modal__label">
-              Nickname (optional)
+              Nickname
               <input
                 id="person-nickname-input"
                 type="text"
@@ -46,7 +46,7 @@
               />
             </label>
             <label for="person-avatar" class="modal__label">
-              Avatar (optional)
+              Avatar
               <input
                 id="person-avatar"
                 type="url"
@@ -54,12 +54,16 @@
                 name="link"
                 placeholder=""
               />
+              <img src="" alt="" class="modal__input-paperclip">
             </label>
             <button class="modal__btn modal__btn-cancel">
               <img src="" alt="Cross mark" class="modal__cancel-btn-image" />
               Cancel
             </button>
-            <button class="modal__btn modal__btn-create">Create</button>
+            <button class="modal__btn modal__btn-create">
+              <img src="" alt="" class="modal__btn-add">
+              Create
+            </button>
           </form>
         </div>
       </div>
@@ -70,10 +74,10 @@
           <button type="button" class="modal__btn modal__btn-discard">
             <img src="" alt="" class="modal__discard-btn-image" />
           </button>
-          <h2 class="modal__title">Edit Person</h2>
+          <h2 class="modal__title">Edit Connection</h2>
           <form id="" action="" class="modal__form" novalidate>
             <label for="edit-person-name-input" class="modal__label"
-              >Person Name
+              >Person Name<sup>*</sup>
               <input
                 id="edit-person-name-input"
                 type="text"
@@ -87,7 +91,7 @@
               <span class="modal__error"></span>
             </label>
             <label for="edit-person-nickname-input" class="modal__label">
-              Nickname (optional)
+              Nickname
               <input
                 id="edit-person-nickname-input"
                 type="text"
@@ -99,7 +103,7 @@
               />
             </label>
             <label for="edit-person-avatar" class="modal__label">
-              Avatar (optional)
+              Avatar
               <input
                 id="edit-person-avatar"
                 type="url"
@@ -107,31 +111,58 @@
                 name="link"
                 placeholder=""
               />
+              <img src="" alt="" class="modal__input-paperclip">
             </label>
             <button class="modal__btn modal__btn-cancel">
               <img src="" alt="Cross mark" class="modal__cancel-btn-image" />
               Cancel
             </button>
-            <button class="modal__btn modal__btn-save">Save</button>
+            <button class="modal__btn modal__btn-create">
+              <img src="" alt="" class="modal__btn-add">
+              Create</button>
           </form>
         </div>
       </div>
       <!-- Edit Person modal ends here -->
       <!-- Delete Person modal begins here -->
       <div class="modal" id="delete-person">
-        <h3 class="modal__delete-person-title">Delete Person?</h3>
+        <h3 class="modal__delete-person-title">Delete Connection?</h3>
         <p class="modal__delete-person-text">
           Are you sure you want to delete<span
             class="modal__delete-person-name"
           ></span
-          >? This will delete all memories associated wih this person.
+          >? This will delete all memories associated with this person.
         </p>
         <div class="modal__delete-person-buttons">
-          <button class="modal__btn modal__btn-delete-cancel">Cancel</button>
-          <button class="modal__btn modal__btn-delete">Delete</button>
+          <button class="modal__btn modal__btn-delete-cancel">
+            <img src="" alt="" class="modal__btn-cancel-delete">
+            Cancel</button>
+          <button class="modal__btn modal__btn-save">Save</button>
         </div>
       </div>
       <!-- Delete Person modal ends here -->
+      <!-- Calendar begins here -->
+       <section class="calendar">
+        <div class="calendar__btn-container">
+          <button class="calendar__back">
+            <img src="" alt="" class="calendar__back-arrow">
+            Back
+          </button>
+          <button class="calendar__wrap">
+            <img src="" alt="" class="calendar__download">
+            Wrap
+          </button>
+        </div>
+        <div class="calendar__txt-elements">
+          <img src="" alt="" class="calendar__avatar">
+          <div class="calendar__description-elements">
+            <p class="calendar__name">Juan</p>
+            <p class="calendar__title">best friend</p>
+          </div>
+        </div>
+        <!-- Actual calendar can be inserted here -->
+       </section>
+      <!-- Calendar ends here -->
     </div>
   </body>
 </html>
