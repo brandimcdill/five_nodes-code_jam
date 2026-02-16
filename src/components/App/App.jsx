@@ -71,10 +71,6 @@ export default function App() {
         console.error("Error creating memory:", error);
       });
   };
-<<<<<<< HEAD
-
-=======
->>>>>>> 9e05bf0a63f029edcad5cd4196140c0df9f5167f
   return (
     <div className="page">
       <div className="page__content">
