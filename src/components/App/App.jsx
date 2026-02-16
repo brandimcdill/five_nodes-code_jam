@@ -5,8 +5,13 @@ import Cards from "../Cards/Cards";
 import People from "../People/People";
 import Footer from "../Footer/Footer";
 import Landing from "../Landing/Landing";
-import { getPerson, createPerson, getPeople, getCalendar, deletePerson } from "../../Utils/API";
-
+import {
+  getPerson,
+  createPerson,
+  getPeople,
+  getCalendar,
+  deletePerson,
+} from "../../Utils/API";
 
 import CalendarComponent from "../Calendar/Calendar";
 
@@ -18,9 +23,8 @@ function App() {
   const [people, setPeople] = useState([]);
 
   const handleCardClick = (card) => {
-      setActiveModal(card);
+    setActiveModal(card);
   };
-
 
   return (
     <div className="page">
@@ -35,7 +39,7 @@ function App() {
         <Footer />
       </div>
     </div>
-  )};
+  );
 }
-}
+
 export default App;
