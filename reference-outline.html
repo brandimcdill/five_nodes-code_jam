@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Remove the link to styles.css once done -->
+    <link rel="stylesheet" href="styles.css" />
+    <title>Paper Thoughts</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+      <!-- TODO - Create id and for attributes for modals -->
+      <!-- Note* The Edit Person Modal is essentially going to have the same modal structure as the Create New Person modal, except it will have a discard button in the top right corner and the lower right button will have the string "Save" -->
+      <!-- Create New Person modal begins here -->
+
+      <div class="modal" id="create-new-person">
+        <div class="modal__container">
+          <h2 class="modal__title">Create New Connection</h2>
+          <form id="" action="" class="modal__form" novalidate>
+            <label for="person-name-input" class="modal__label"
+              >Person Name<sup>*</sup>
+              <input
+                id="person-name-input"
+                type="text"
+                class="modal__input"
+                name="name"
+                placeholder="e.g., Juan"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <span class="modal__error"></span>
+            </label>
+            <label for="person-nickname-input" class="modal__label">
+              Nickname
+              <input
+                id="person-nickname-input"
+                type="text"
+                class="modal__input"
+                name="name"
+                placeholder="e.g., best friend"
+                minlength="2"
+                maxlength="40"
+              />
+            </label>
+            <label for="person-avatar" class="modal__label">
+              Avatar
+              <input
+                id="person-avatar"
+                type="url"
+                class="modal__input"
+                name="link"
+                placeholder=""
+              />
+              <img src="" alt="" class="modal__input-paperclip">
+            </label>
+            <button class="modal__btn modal__btn-cancel">
+              <img src="" alt="Cross mark" class="modal__cancel-btn-image" />
+              Cancel
+            </button>
+            <button class="modal__btn modal__btn-create">
+              <img src="" alt="" class="modal__btn-add">
+              Create
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- Create New Person modal ends here -->
+      <!-- Edit Person modal begins here -->
+      <div class="modal" id="edit-person">
+        <div class="modal__container">
+          <button type="button" class="modal__btn modal__btn-discard">
+            <img src="" alt="" class="modal__discard-btn-image" />
+          </button>
+          <h2 class="modal__title">Edit Connection</h2>
+          <form id="" action="" class="modal__form" novalidate>
+            <label for="edit-person-name-input" class="modal__label"
+              >Person Name<sup>*</sup>
+              <input
+                id="edit-person-name-input"
+                type="text"
+                class="modal__input"
+                name="name"
+                placeholder="e.g., Juan"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <span class="modal__error"></span>
+            </label>
+            <label for="edit-person-nickname-input" class="modal__label">
+              Nickname
+              <input
+                id="edit-person-nickname-input"
+                type="text"
+                class="modal__input"
+                name="name"
+                placeholder="e.g., best friend"
+                minlength="2"
+                maxlength="40"
+              />
+            </label>
+            <label for="edit-person-avatar" class="modal__label">
+              Avatar
+              <input
+                id="edit-person-avatar"
+                type="url"
+                class="modal__input"
+                name="link"
+                placeholder=""
+              />
+              <img src="" alt="" class="modal__input-paperclip">
+            </label>
+            <button class="modal__btn modal__btn-cancel">
+              <img src="" alt="Cross mark" class="modal__cancel-btn-image" />
+              Cancel
+            </button>
+            <button class="modal__btn modal__btn-create">
+              <img src="" alt="" class="modal__btn-add">
+              Create</button>
+          </form>
+        </div>
+      </div>
+      <!-- Edit Person modal ends here -->
+      <!-- Delete Person modal begins here -->
+      <div class="modal" id="delete-person">
+        <h3 class="modal__delete-person-title">Delete Connection?</h3>
+        <p class="modal__delete-person-text">
+          Are you sure you want to delete<span
+            class="modal__delete-person-name"
+          ></span
+          >? This will delete all memories associated with this person.
+        </p>
+        <div class="modal__delete-person-buttons">
+          <button class="modal__btn modal__btn-delete-cancel">
+            <img src="" alt="" class="modal__btn-cancel-delete">
+            Cancel</button>
+          <button class="modal__btn modal__btn-save">Save</button>
+        </div>
+      </div>
+      <!-- Delete Person modal ends here -->
+      <!-- Calendar begins here -->
+       <section class="calendar">
+        <div class="calendar__btn-container">
+          <button class="calendar__back">
+            <img src="" alt="" class="calendar__back-arrow">
+            Back
+          </button>
+          <button class="calendar__wrap">
+            <img src="" alt="" class="calendar__download">
+            Wrap
+          </button>
+        </div>
+        <div class="calendar__txt-elements">
+          <img src="" alt="" class="calendar__avatar">
+          <div class="calendar__description-elements">
+            <p class="calendar__name">Juan</p>
+            <p class="calendar__title">best friend</p>
+          </div>
+        </div>
+        <!-- Actual calendar can be inserted here -->
+       </section>
+      <!-- Calendar ends here -->
+      <!-- Memory Entry Page begins here -->
+       
+      <!-- Memory Entry Page ends here -->
+    </div>
+  </body>
+</html>
