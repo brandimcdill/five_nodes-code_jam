@@ -6,7 +6,7 @@ function checkResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 }
 
-function createPerson(name, relationship) {
+function createPerson(name, relationship, avatar) {
   return fetch(`${baseUrl}/people`, {
     method: "POST",
     headers: {
@@ -14,7 +14,7 @@ function createPerson(name, relationship) {
       "Content-Type": "application/json",
       Authorization: `Bearer ${getToken()}`,
     },
-    body: JSON.stringify({ name, relationship }),
+    body: JSON.stringify({ name, relationship, avatar }),
   }).then(checkResponse);
 }
 
@@ -62,4 +62,5 @@ function deletePerson(id) {
   }).then(checkResponse);
 }
 
-export { createPerson, getPerson, getPeople, getCalendar, deletePerson };
+function createMemory()
+export { createPerson, getPerson, getPeople, getCalendar, deletePerson, checkResponse };
