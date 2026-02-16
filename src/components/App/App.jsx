@@ -71,6 +71,7 @@ export default function App() {
         console.error("Error creating memory:", error);
       });
   };
+
   return (
     <div className="page">
       <div className="page__content">
