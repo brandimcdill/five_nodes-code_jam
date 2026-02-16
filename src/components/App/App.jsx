@@ -18,8 +18,9 @@ function App() {
     <div className="page__content">
       <Header />
       <Routes>
-        <Route path="/" element={<CalendarComponent onChange={setDate} />} />
         <Route path="/landing" element={<Landing />} />
+        <Route path="/calendar" element={<CalendarComponent onChange={setDate} />} />
+        
       </Routes>
       <Cards />
       <People />
