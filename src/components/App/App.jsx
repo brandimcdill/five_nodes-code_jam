@@ -12,12 +12,15 @@ import CalendarComponent from "../Calendar/Calendar";
 
 function App() {
   const [page, setPage] = useState("landing");
-  const [modal, setModal] = useState(null);
+  const [activeModal, setActiveModal] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [date, setDate] = useState(new Date());
   const [people, setPeople] = useState([]);
 
-  const handlePersonClick = (person) => {
+  const handleCardClick = (card) => {
+      setActiveModal(card);
+  };
+
 
   return (
     <div className="page">
@@ -32,6 +35,7 @@ function App() {
         <Footer />
       </div>
     </div>
-  );
+  )};
+}
 }
 export default App;
