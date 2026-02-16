@@ -15,15 +15,17 @@ function App() {
   const [date, setDate] = useState(new Date());
 
   return (
-    <div className="page__content">
-      <Header />
-      <Routes>
-        <Route path="/landing" element={<Landing />} />
-        <Route path="/" element={<CalendarComponent onChange={setDate} />} />
-      </Routes>
-      <Cards />
-      <People />
-      <Footer />
+    <div className="page">
+      <div className="page__content">
+        <Header />
+        <Routes>
+          <Route path="/landing" element={<Landing />} />
+          <Route path="/" element={<CalendarComponent onChange={setDate} />} />
+        </Routes>
+        <Cards />
+        <People />
+        <Footer />
+      </div>
     </div>
   );
 }
