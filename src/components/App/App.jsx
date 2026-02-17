@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import "./App.css";
 import Header from "../Header/Header";
 import Cards from "../Cards/Cards";
 import People from "../People/People";
@@ -18,9 +19,11 @@ import {
 import { signIn, signout, signUp, setToken, getToken } from "../../Utils/auth";
 import { AuthProvider } from "../../Utils/Contexts/AuthContext";
 import { UserContext } from "../../Utils/Contexts/UserContext";
-
+import EditPersonModal from "../Modals/EditPersonModal";
 import CalendarComponent from "../Calendar/Calendar";
 import CreatePersonModal from "../Modals/CreatePersonModal";
+import DeletePersonModal from "../Modals/DeletePersonModal";
+import CreateMemoryModal from "../Modals/CreateMemoryModal";
 
 export default function App() {
   const [page, setPage] = useState("landing");
@@ -102,17 +105,17 @@ export default function App() {
             }
           />
         </Routes>
-        <Cards
-          handleDeleteConnectionClick={handleDeleteConnectionClick}
-          onClick={handleCardClick}
-          card={selectedCard}
-        />
         <People
           handleDeleteConnectionClick={handleDeleteConnectionClick}
           selectedCard={selectedCard}
+          people={people}
+          handleCardClick={handleCardClick}
         />
         <Footer />
+        <EditPersonModal modal={activeModal} setModal={setActiveModal} />
         <CreatePersonModal modal={activeModal} setModal={setActiveModal} />
+        <DeletePersonModal modal={activeModal} setModal={setActiveModal} />
+        <CreateMemoryModal modal={activeModal} setModal={setActiveModal} />
       </div>
     </div>
   );

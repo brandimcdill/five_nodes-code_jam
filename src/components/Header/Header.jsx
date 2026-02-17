@@ -1,4 +1,3 @@
-import React from "react";
 import "./Header.css";
 import airplane from "../../assets/airplane.svg";
 function Header() {

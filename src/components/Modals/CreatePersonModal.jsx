@@ -1,6 +1,6 @@
-import "./CreatePersonModal.css";
+import "./ModalWithForm.css";
 
-function CreatePersonModal({ modal, setModal }) {
+function CreatePersonModal({ modal }) {
   return (
     <div
       className={`modal ${modal === "createPerson" ? "modal_opened" : ""}`}
