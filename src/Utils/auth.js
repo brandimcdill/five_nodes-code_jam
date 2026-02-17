@@ -1,23 +1,15 @@
 import { baseUrl } from "./api";
-import { checkResponse } from "./api";
 
-function getToken() {
-  return localStorage.getItem("jwt");
+function getToken(token) {
+  return localStorage.getItem("jwt", token);
 }
 
-function setToken() {
-  return localStorage.setItem("jwt");
+function setToken(token) {
+  return localStorage.setItem("jwt", token);
 }
 
 function checkToken(token) {
-  return fetch(`${baseUrl}/users/me`, {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  }).then(checkResponse);
+  const user = JSON.parse(localStorage.getItem("user"));
 }
 
 function signUp(data) {
@@ -28,7 +20,7 @@ function signUp(data) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ data }),
-  }).then(checkResponse);
+  })
 }
 
 function signIn(data) {
@@ -39,7 +31,7 @@ function signIn(data) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ data }),
-  }).then(checkResponse);
+  })
 }
 
 function signout() {

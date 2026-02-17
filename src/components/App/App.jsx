@@ -13,16 +13,18 @@ import {
   getCalendar,
   deletePerson,
   createMemory,
+  getMemories,
 } from "../../Utils/API";
 import { signIn, signout, signUp, setToken, getToken } from "../../Utils/auth";
 import { AuthProvider } from "../../Utils/Contexts/AuthContext";
 import { UserContext } from "../../Utils/Contexts/UserContext";
 
 import CalendarComponent from "../Calendar/Calendar";
+import CreatePersonModal from "../Modals/CreatePersonModal";
 
 export default function App() {
   const [page, setPage] = useState("landing");
-  const [activeModal, setActiveModal] = useState("");
+  const [activeModal, setActiveModal] = useState("createPerson");
   const [isLoading, setIsLoading] = useState(true);
   const [date, setDate] = useState(new Date());
   const [people, setPeople] = useState([]);
@@ -34,6 +36,13 @@ export default function App() {
   const handleAddConnectionClick = () => {
     setActiveModal("addConnection");
   };
+
+  const handleAddNewConnection = (name, relationship, avatar) => {
+    createPerson(name, relationship, avatar).then((newPerson) => {
+      setPeople((prevPeople) => [...prevPeople, newPerson]);
+    });
+  };
+
   const handleDeleteConnectionClick = (card) => {
     deletePerson(card.id)
       .then(() => {
@@ -61,7 +70,7 @@ export default function App() {
             if (person.id === memoryData.personId) {
               return {
                 ...person,
-                memories: [...person.memories, newMemory],
+                memories: [...(person.memories || []), newMemory],
               };
             }
             return person;
@@ -103,6 +112,7 @@ export default function App() {
           selectedCard={selectedCard}
         />
         <Footer />
+        <CreatePersonModal modal={activeModal} setModal={setActiveModal} />
       </div>
     </div>
   );
