@@ -1,95 +1,112 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
 import Header from "../Header/Header";
-import Cards from "../Cards/Cards";
 import People from "../People/People";
 import Footer from "../Footer/Footer";
 import Landing from "../Landing/Landing";
 import NavBar from "../NavBar/NavBar";
-import {
-  getPerson,
-  createPerson,
-  getPeople,
-  getCalendar,
-  deletePerson,
-  createMemory,
-  getMemories,
-} from "../../Utils/API";
-import { signIn, signout, signUp, setToken, getToken } from "../../Utils/auth";
-import { AuthProvider } from "../../Utils/Contexts/AuthContext";
-import { UserContext } from "../../Utils/Contexts/UserContext";
-import EditPersonModal from "../Modals/EditPersonModal";
 import CalendarComponent from "../Calendar/Calendar";
+
+import type { Person, Memory } from "../../Utils/API";
+import { createPerson, deletePerson, createMemory } from "../../Utils/API";
+
+import EditPersonModal from "../Modals/EditPersonModal";
 import CreatePersonModal from "../Modals/CreatePersonModal";
 import DeletePersonModal from "../Modals/DeletePersonModal";
 import CreateMemoryModal from "../Modals/CreateMemoryModal";
 
+// Types
+
+type MemoryInput = {
+  title: string;
+  note: string;
+  date: string | Date;
+  personId: number;
+  link?: string;
+  imageUrl?: string;
+};
+
+type ModalType =
+  | "createPerson"
+  | "addConnection"
+  | "editPerson"
+  | "deletePerson"
+  | "createMemory"
+  | string;
+
+// Component
+
 export default function App() {
-  const [page, setPage] = useState("landing");
-  const [activeModal, setActiveModal] = useState("createPerson");
-  const [isLoading, setIsLoading] = useState(true);
-  const [date, setDate] = useState(new Date());
-  const [people, setPeople] = useState([]);
-  const [selectedCard, setSelectedCard] = useState(null);
+  const [activeModal, setActiveModal] = useState<ModalType>("createPerson");
 
-  const handleCardClick = (card) => {
-    setActiveModal(card);
-  };
-  const handleAddConnectionClick = () => {
-    setActiveModal("addConnection");
+  const [date, setDate] = useState<Date>(new Date());
+  const [people, setPeople] = useState<Person[]>([]);
+  const [selectedCard, setSelectedCard] = useState<Person | null>(null);
+
+  // Handlers
+
+  const handleCardClick = (card: Person) => {
+    setSelectedCard(card);
+    setActiveModal("editPerson");
   };
 
-  const handleAddNewConnection = (name, relationship, avatar) => {
+  const handleAddNewConnection = (
+    name: string,
+    relationship: string,
+    avatar?: string,
+  ) => {
     createPerson(name, relationship, avatar).then((newPerson) => {
       setPeople((prevPeople) => [...prevPeople, newPerson]);
     });
   };
 
-  const handleDeleteConnectionClick = (card) => {
+  const handleDeleteConnectionClick = (card: Person) => {
     deletePerson(card.id)
       .then(() => {
         setPeople((prevPeople) =>
           prevPeople.filter((person) => person.id !== card.id),
         );
       })
-      .catch((error) => {
+      .catch((error: unknown) => {
         console.error("Error deleting person:", error);
       });
   };
-  const handleNewMemory = (memoryData) => {
+
+  const handleNewMemory = (memoryData: MemoryInput) => {
     createMemory(
       memoryData.title,
       memoryData.note,
-      memoryData.date,
+      new Date(memoryData.date).toISOString(),
       memoryData.personId,
       memoryData.link,
       memoryData.imageUrl,
     )
-      .then((newMemory) => {
-        // Update the state to include the new memory
-        setPeople((prevPeople) => {
-          return prevPeople.map((person) => {
+      .then((newMemory: Memory) => {
+        setPeople((prevPeople) =>
+          prevPeople.map((person) => {
             if (person.id === memoryData.personId) {
               return {
                 ...person,
-                memories: [...(person.memories || []), newMemory],
+                memories: [...(person.memories ?? []), newMemory],
               };
             }
             return person;
-          });
-        });
+          }),
+        );
       })
-      .catch((error) => {
+      .catch((error: unknown) => {
         console.error("Error creating memory:", error);
       });
   };
+
+  // Render
 
   return (
     <div className="page">
       <div className="page__content">
         <NavBar />
         <Header />
+
         <Routes>
           <Route path="/landing" element={<Landing />} />
           <Route
@@ -105,13 +122,16 @@ export default function App() {
             }
           />
         </Routes>
+
         <People
           handleDeleteConnectionClick={handleDeleteConnectionClick}
           selectedCard={selectedCard}
           people={people}
           handleCardClick={handleCardClick}
         />
+
         <Footer />
+
         <EditPersonModal modal={activeModal} setModal={setActiveModal} />
         <CreatePersonModal modal={activeModal} setModal={setActiveModal} />
         <DeletePersonModal modal={activeModal} setModal={setActiveModal} />
