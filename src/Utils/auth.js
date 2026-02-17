@@ -1,5 +1,4 @@
 import { baseUrl } from "./api";
-import { checkResponse } from "./api";
 
 function getToken() {
   return localStorage.getItem("jwt");
