@@ -47,24 +47,24 @@ const DeletePersonModalStyles: DeletePersonModalStyles = {
   }
 }
 
-function DeletePersonModal({ modal }) {
+function DeletePersonModal({ modal, handleDeleteConnectionClick, closeModal }) {
     return (
         <div
       className={`modal ${modal === "deletePerson" ? "modal_opened" : ""}`}
       id="delete-person"
       style={DeletePersonModalStyles.container}
     >
-        <h3 className="modal__delete-person-title" style={DeletePersonModalStyles.title}>Delete Connection?</h3>
-        <p className="modal__delete-person-text" style={DeletePersonModalStyles.text}>
+        <h3 className="modal__delete-person-title">Delete Connection?</h3>
+        <p className="modal__delete-person-text">
           Are you sure you want to delete<span
-            className="modal__delete-person-name"
-          ></span>? This will delete all memories associated with this person.
+            class="modal__delete-person-name"
+          ></span> This will delete all memories associated with this person.
         </p>
-        <div className="modal__delete-person-buttons" style={DeletePersonModalStyles.buttonsContainer}>
-          <button className="modal__btn modal__btn-delete-cancel" style={DeletePersonModalStyles.buttonCancel}>
-            <img src="" alt="Cross mark" className="modal__btn-cancel-delete" />
+        <div class="modal__delete-person-buttons">
+          <button class="modal__btn modal__btn-delete-cancel">
+            <img src="" alt="" class="modal__btn-cancel-delete" />
             Cancel</button>
-          <button className="modal__btn modal__btn-delete" style={DeletePersonModalStyles.buttonSave}>Save</button>
+          <button class="modal__btn modal__btn-delete">Delete</button>
         </div>
       </div>)
 }

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Calendar from "react-calendar";
 
-function CalendarComponent({ onChange, activeModal, selectedCard }) {
-  const [date, setDate] = useState(new Date());
+function CalendarComponent({ onChange, activeModal, selectedCard, value, handleNewMemory }) {
+  const [date, setDate] = useState(value);
   const config = useState({
     onChange: setDate,
     viewType: "week",

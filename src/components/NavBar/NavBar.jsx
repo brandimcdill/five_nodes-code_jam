@@ -8,18 +8,24 @@ import "./NavBar.css";
 function NavBar() {
   return (
     <nav className="navbar">
-      <NavLink to="/" className="navbar__link">
-        <img src={home_icon} alt="Home Icon" className="navbar__icon" />
-        Home
-      </NavLink>
-      <NavLink to="/account" className="navbar__link">
-        <img src={acct_icon} alt="Account Icon" className="navbar__icon" />
-        Account
-      </NavLink>
-      <NavLink to="/settings" className="navbar__link">
-        <img src={settings_icon} alt="Settings Icon" className="navbar__icon" />
-        Settings
-      </NavLink>
+      <div className="navbar__container">
+        <NavLink to="/" className="navbar__link">
+          <img src={home_icon} alt="Home Icon" className="navbar__icon" />
+          Home
+        </NavLink>
+        <NavLink to="/account" className="navbar__link">
+          <img src={acct_icon} alt="Account Icon" className="navbar__icon" />
+          Account
+        </NavLink>
+        <NavLink to="/settings" className="navbar__link">
+          <img
+            src={settings_icon}
+            alt="Settings Icon"
+            className="navbar__icon"
+          />
+          Settings
+        </NavLink>
+      </div>
     </nav>
   );
 }

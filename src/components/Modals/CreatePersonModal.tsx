@@ -1,6 +1,6 @@
 import "./ModalWithForm.css";
 
-function CreatePersonModal({ modal }) {
+function CreatePersonModal({ modal, closeModal, handleAddNewConnection }) {
   return (
     <div
       className={`modal ${modal === "createPerson" ? "modal_opened" : ""}`}
@@ -8,8 +8,8 @@ function CreatePersonModal({ modal }) {
     >
       <h2 className="modal__title">Create New Connection</h2>
       <div className="modal__container">
-        <form id="" action="" className="modal__form" novalidate>
-          <label for="person-name-input" className="modal__label">
+        <form id="" action="" className="modal__form" noValidate>
+          <label htmlFor="person-name-input" className="modal__label">
             Person Name *
             <input
               id="person-name-input"
@@ -17,13 +17,13 @@ function CreatePersonModal({ modal }) {
               className="modal__input"
               name="name"
               placeholder="e.g., Juan"
-              minlength="2"
-              maxlength="40"
+              minLength={2}
+              maxLength={40}
               required
             />
             <span className="modal__error"></span>
           </label>
-          <label for="person-relationship-input" className="modal__label">
+          <label htmlFor="person-relationship-input" className="modal__label">
             Relationship
             <input
               id="person-relationship-input"
@@ -31,11 +31,11 @@ function CreatePersonModal({ modal }) {
               className="modal__input"
               name="name"
               placeholder="e.g., best friend"
-              minlength="2"
-              maxlength="40"
+              minLength={2}
+              maxLength={40}
             />
           </label>
-          <label for="person-avatar" className="modal__label">
+          <label htmlFor="person-avatar" className="modal__label">
             Avatar
             <input
               id="person-avatar"
@@ -46,7 +46,7 @@ function CreatePersonModal({ modal }) {
             />
           </label>
           <div className="modal__btn-container">
-            <button className="modal__btn modal__btn-cancel">
+            <button className="modal__btn modal__btn-cancel" type="button" onClick={closeModal}>
               <img
                 src=""
                 alt="Cross mark"
@@ -54,7 +54,7 @@ function CreatePersonModal({ modal }) {
               />
               Cancel
             </button>
-            <button className="modal__btn modal__btn-create">
+            <button className="modal__btn modal__btn-create" type="submit" onClick={() => handleAddNewConnection(document.getElementById("person-name-input").value, document.getElementById("person-relationship-input").value, document.getElementById("person-avatar").value)}>
               <img src="" alt="Add sign" className="modal__btn-add" />
               Create
             </button>
