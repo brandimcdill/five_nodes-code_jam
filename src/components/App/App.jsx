@@ -13,6 +13,7 @@ import {
   getCalendar,
   deletePerson,
   createMemory,
+  getMemories
 } from "../../Utils/API";
 import { signIn, signout, signUp, setToken, getToken } from "../../Utils/auth";
 import { AuthProvider } from "../../Utils/Contexts/AuthContext";
@@ -34,6 +35,14 @@ export default function App() {
   const handleAddConnectionClick = () => {
     setActiveModal("addConnection");
   };
+
+  const handleAddNewConnection = ( name, relationship, avatar) => {
+    createPerson(name, relationship, avatar)
+    .then((newPerson) => {
+      setPeople((prevPeople) => [...prevPeople, newPerson]);
+    })
+  };
+
   const handleDeleteConnectionClick = (card) => {
     deletePerson(card.id)
       .then(() => {
@@ -57,11 +66,11 @@ export default function App() {
       .then((newMemory) => {
         // Update the state to include the new memory
         setPeople((prevPeople) => {
-          return prevPeople.map((person) => {
+           return  prevPeople.map((person) => {
             if (person.id === memoryData.personId) {
               return {
                 ...person,
-                memories: [...person.memories, newMemory],
+                memories: [...(person.memories || []), newMemory],
               };
             }
             return person;
@@ -72,6 +81,8 @@ export default function App() {
         console.error("Error creating memory:", error);
       });
   };
+
+
   return (
     <div className="page">
       <div className="page__content">
