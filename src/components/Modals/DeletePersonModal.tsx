@@ -1,22 +1,22 @@
 import "./ModalWithForm.css";
 
-function DeletePersonModal({ modal }) {
+function DeletePersonModal({ modal, handleDeleteConnectionClick, closeModal }) {
     return (
         <div
       className={`modal ${modal === "deletePerson" ? "modal_opened" : ""}`}
       id="delete-person"
     >
         <h3 className="modal__delete-person-title">Delete Connection?</h3>
-        <p class="modal__delete-person-text">
+        <p className="modal__delete-person-text">
           Are you sure you want to delete<span
-            class="modal__delete-person-name"
+            className="modal__delete-person-name"
           ></span> This will delete all memories associated with this person.
         </p>
-        <div class="modal__delete-person-buttons">
-          <button class="modal__btn modal__btn-delete-cancel">
-            <img src="" alt="" class="modal__btn-cancel-delete" />
+        <div className="modal__delete-person-buttons">
+          <button className="modal__btn modal__btn-delete-cancel" type="button" onClick={closeModal}>
+            <img src="" alt="" className="modal__btn-cancel-delete" />
             Cancel</button>
-          <button class="modal__btn modal__btn-delete">Delete</button>
+          <button className="modal__btn modal__btn-delete" type="button" onClick={handleDeleteConnectionClick}>Delete</button>
         </div>
       </div>)
 }

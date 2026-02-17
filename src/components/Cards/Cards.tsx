@@ -1,17 +1,17 @@
 import paper_plane from "../../assets/paper_plane.svg";
+import {people} from "../../Utils/Constants/people";
 function Cards({ onclick, card, people}) {
   const handleCardClick = () => {
     onclick(card);
   };
   let nameValue;
   let relationshipValue;
-  if (people && card) {
-    const person = people.find((p) => p.id === card.id);
-    if (person) {
-      nameValue = person.name;
-      relationshipValue = person.relationship;
-    }
-  }
+  let connections= people.find((person) => person.id === card?.id);
+  (connections ? people.map((person) => {
+    person.id ? nameValue =person.name : nameValue = "No Name";
+    person.relationship ? relationshipValue = person.relationship : relationshipValue = "No Relationship";
+    person.avatar ? person.avatar : "No Avatar"; 
+  }) : nameValue = "No Name", relationshipValue = "No Relationship");
   return (
     <li className="card">
       <div className="cards__information">

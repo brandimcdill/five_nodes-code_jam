@@ -1,9 +1,12 @@
+import { data } from "react-router-dom";
+
 export const people = [
     {
         id: 1,
         name: "Alice Smith",
         relationship: "Spouse",
         avatar:"",
+        memories: [data]
     },
 
     {
@@ -11,6 +14,7 @@ export const people = [
         name: "Bob Johnson",
         relationship: "Best Friend",
         avatar: "",
+        memories: [data]
     },
 
     {
@@ -18,6 +22,7 @@ export const people = [
         name: "Denise Brown",
         relationship: "Sister",
         avatar: "",
+        memories: [data]
     },
 
     {
@@ -25,5 +30,6 @@ export const people = [
         name: "David Brown",
         relationship: "Brother",
         avatar: "",
+        memories: [data]
     }
 ]
