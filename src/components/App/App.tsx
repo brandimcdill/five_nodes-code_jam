@@ -18,6 +18,14 @@ import { get } from "node:http";
 
 // Types
 
+type Person = {
+  id: number;
+  name: string;
+  relationship: string;
+  avatar?: string;
+  memories?: Memory[]; // <-- Add this line
+};
+
 type MemoryInput = {
   title: string;
   note: string;
@@ -37,12 +45,9 @@ type ModalType =
 
 // Component
 
-export default function App() {
-<<<<<<< HEAD
+function App() {
+
   const [activeModal, setActiveModal] = useState<ModalType>("");
-=======
-  const [activeModal, setActiveModal] = useState<ModalType>("deletePerson");
->>>>>>> 014cf40d6faa045710ca23c1ca597a8986eeb3e1
 
   const [date, setDate] = useState<Date>(new Date());
   const [people, setPeople] = useState<Person[]>([]);
@@ -173,3 +178,4 @@ export default function App() {
     </div>
   );
 }
+export default App;

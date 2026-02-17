@@ -8,15 +8,13 @@ function CreateMemoryModal({ modal }) {
             <section className="entry">
         <button className="entry__btn_back">
           <img src="" alt="" className="entry-arrow" />
-            <section className="entry">
-        <button className="entry__btn_back">
-          <img src="" alt="" className="entry-arrow" />
           Back
         </button>
-        <div class="entry__entry-container">
-          <p class="entry__date"></p>
-          <p class="entry__title">New Memory</p>
-          <label for="entry-note-input" class="entry__label">
+        <div className="entry__entry-container">
+          <p className="entry__date"></p>
+          <p className="entry__title">New Memory</p>
+          <label htmlFor="entry-note-input" className="entry__label">
+
             Note
             <input
               id="entry-note-input" 
@@ -29,7 +27,7 @@ function CreateMemoryModal({ modal }) {
               maxLength={200} 
             />
           </label>
-          <label for="entry-link-input" class="entry__link">
+          <label htmlFor="entry-link-input" className="entry__link">
             Link
             <input
               id="entry-link-input" 
@@ -39,16 +37,18 @@ function CreateMemoryModal({ modal }) {
               placeholder="https://..."
             />
           </label>
-          <label for="entry-image-link-input" class="entry__image">
-            <img src="" alt="Paper clip image" class="entry__image-paperclip" />
+
+          <label htmlFor="entry-image-link-input" className="entry__image">
+            <img src="" alt="Paper clip image" className="entry__image-paperclip" />
             <input 
               id="entry-image-input"
               type="url" 
               className="entry__image-input"
               name="link"/>
           </label>
-          <label for="entry-gift-card-input" class="entry__gift-card">
-            <img src="" alt="Camera image" class="entry__gift-card-camera" />
+
+          <label htmlFor="entry-gift-card-input" className="entry__gift-card">
+            <img src="" alt="Camera image" className="entry__gift-card-camera" />
             <input 
               id="entry-gift-card-input"
               type="text" 
@@ -64,6 +64,7 @@ function CreateMemoryModal({ modal }) {
           <button className="modal__btn entry__btn-save">Save</button>
         </div>
        </section>
-    </div>
+       </div>
   );
-}export default CreateMemoryModal;
+}
+    export default CreateMemoryModal;

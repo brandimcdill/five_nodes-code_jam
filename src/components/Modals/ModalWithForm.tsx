@@ -1,5 +1,18 @@
 import "../Modals/ModalWithForm.css";
-
+//AI help
+type ModalWithFormProps = {
+  children: React.ReactNode;
+  title: string;
+  modalContentMod: string;
+  modalForm: string;
+  onSubmit: React.FormEventHandler<HTMLFormElement>;
+  id?: string;
+  buttonText?: string;
+  onClose: () => void;
+  handleModalOverlayClick: (event: React.MouseEvent<HTMLDivElement>) => void;
+  isOpen: boolean;
+};
+//AI help end
 function ModalWithForm({
   children,
   title,
@@ -11,7 +24,7 @@ function ModalWithForm({
   onClose,
   handleModalOverlayClick,
   isOpen,
-}) {
+}: ModalWithFormProps) {
   return (
     <div
       className={`modal ${isOpen && "modal-opened"}`}
@@ -29,9 +42,9 @@ function ModalWithForm({
             ></button>
           </form>
         </div>
-      </div>
-    </div>
-  );
-}
+        </div>
+        </div>
+    )
+};
 
 export default ModalWithForm;

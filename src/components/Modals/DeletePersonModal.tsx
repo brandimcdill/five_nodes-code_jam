@@ -47,53 +47,6 @@ const DeletePersonModalStyles: DeletePersonModalStyles = {
   }
 }
 
-interface DeletePersonModalStyles {
-  container: React.CSSProperties;
-  title: React.CSSProperties;
-  text: React.CSSProperties;
-  buttonsContainer: React.CSSProperties;
-  buttonCancel: React.CSSProperties;
-  buttonSave: React.CSSProperties;
-}
-
-const DeletePersonModalStyles: DeletePersonModalStyles = {
-  container: {
-    display: "flex",
-    alignItems: "center",
-    height: "300px",
-    width: "317px",
-    padding: "34px 34px 0",
-    backgroundColor: "#fefdfb",
-    border: "2px solid #593a16",
-    color: "#593a16"
-  },
-  title: {
-    margin: "0",
-    fontSize: "20px",
-    paddingBottom: "18.5px"
-  },
-  text: {
-    margin: "0"
-  },
-  buttonsContainer: {
-    display: "flex",
-    gap: "15px",
-    padding: "25px 62px 57px"
-  },
-  buttonCancel: {
-    color: "#fff",
-    backgroundColor: "#593a16",
-    border: "1px solid #000",
-    fontSize: "14px"
-  },
-  buttonSave: {
-    color: "#593a16",
-    backgroundColor: "#fff",
-    border: "1px solid #593a16",
-    fontSize: "14px"
-  }
-}
-
 function DeletePersonModal({ modal, handleDeleteConnectionClick, closeModal }) {
     return (
         <div
@@ -101,13 +54,22 @@ function DeletePersonModal({ modal, handleDeleteConnectionClick, closeModal }) {
       id="delete-person"
       style={DeletePersonModalStyles.container}
     >
-        <h3 className="modal__delete-person-title">Delete Connection?</h3>
-        <p className="modal__delete-person-text">
-        <h3 className="modal__delete-person-title" style={DeletePersonModalStyles.title}>Delete Connection?</h3>
+        <h2 className="modal__delete-person-title" style={DeletePersonModalStyles.title}>Delete Connection?</h2>
         <p className="modal__delete-person-text" style={DeletePersonModalStyles.text}>
           Are you sure you want to delete<span
             className="modal__delete-person-name"
-          ></span> This will delete all memories associated with this person.
+          ></span>? This will delete all memories associated with this person.
+        </p>
+        <div className="modal__delete-person-buttons" style={DeletePersonModalStyles.buttonsContainer}>
+          <button className="modal__btn modal__btn-delete-cancel" style={DeletePersonModalStyles.buttonCancel}>
+            <img src="" alt="Cross mark" className="modal__btn-cancel-delete" />
+            Cancel</button>
+          <button className="modal__btn modal__btn-delete" style={DeletePersonModalStyles.buttonSave}>Save</button>
+        <h3 className="modal__delete-person-title">Delete Connection?</h3>
+        <p className="modal__delete-person-text">
+          Are you sure you want to delete<span
+            className="modal__delete-person-name"
+          ></span>? This will delete all memories associated with this person.
         </p>
         <div className="modal__delete-person-buttons">
           <button className="modal__btn modal__btn-delete-cancel" onClick={closeModal}>
@@ -115,6 +77,8 @@ function DeletePersonModal({ modal, handleDeleteConnectionClick, closeModal }) {
             Cancel</button>
           <button className="modal__btn modal__btn-delete" onClick={handleDeleteConnectionClick}>Delete</button>
         </div>
-      </div>)
+      </div>
+      </div>
+    )
 }
 export default DeletePersonModal;
