@@ -48,11 +48,13 @@
 }
 
 .modal__input {
+  font-size: 15px;
   height: 48.29px;
   border: 1.5px solid #000;
   border-radius: 16px;
   margin-top: 7.95px;
   margin-bottom: 15.22px;
+  padding-left: 14.04px;
 }
 
 .modal__btn-container {
