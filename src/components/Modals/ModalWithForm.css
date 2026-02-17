@@ -1,0 +1,82 @@
+.modal {
+  visibility: hidden;
+  position: fixed;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  align-items: stretch;
+  z-index: 1000;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 26px;
+  width: 352px;
+  height: 530px;
+  border: 5px solid #ddcea7;
+  border-radius: 15px;
+  background-color: #ff657b;
+}
+
+.modal_opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__title {
+  color: #f5f5f5;
+  text-align: center;
+  font-size: 24px;
+  margin: 0;
+  padding-bottom: 13.63px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__label {
+  color: #f5f5f5;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__input {
+  font-size: 15px;
+  height: 48.29px;
+  border: 1.5px solid #000;
+  border-radius: 16px;
+  margin-top: 7.95px;
+  margin-bottom: 15.22px;
+  padding-left: 14.04px;
+}
+
+.modal__btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+  padding-top: 8.28px;
+}
+
+.modal__btn {
+  width: 91px;
+  height: 44px;
+  border: 2px solid;
+  border-radius: 8px;
+}
+
+.modal__btn-cancel {
+  color: #f5f5f5;
+  background-color: #593a16;
+}
+
+.modal__btn-create {
+  color: #593a16;
+  background-color: #f5f5f5;
+}

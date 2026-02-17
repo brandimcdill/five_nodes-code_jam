@@ -1,10 +1,17 @@
 import paper_plane from "../../assets/paper_plane.svg";
-function Cards({ onclick, card }) {
+function Cards({ onclick, card, people}) {
   const handleCardClick = () => {
     onclick(card);
   };
   let nameValue;
   let relationshipValue;
+  if (people && card) {
+    const person = people.find((p) => p.id === card.id);
+    if (person) {
+      nameValue = person.name;
+      relationshipValue = person.relationship;
+    }
+  }
   return (
     <li className="card">
       <div className="cards__information">
