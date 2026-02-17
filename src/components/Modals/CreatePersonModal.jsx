@@ -1,4 +1,4 @@
-function CreatePersonModal() {
+function CreatePersonModal({ modal, setModal }) {
     return (
         <div class="modal" id="create-new-person">
         <div class="modal__container">
