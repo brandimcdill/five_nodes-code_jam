@@ -1,17 +1,21 @@
-# React + Vite
+February Code Jam - Paper Thoughts
+Paper Thoughts is a React app that allows users to record thoughtfiul daily messages about the people in
+their lives. This app features a Header with navigation bar to go between home, account, and settings. Users
+have a collection of connections they have made, with each connection having its own calendar to display
+dates that a thoughtful message was sent. User connections are displayed in an array of cards containing the
+connection info which is housed within localStorage.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app was built using React, CSS, and TypeScript
 
-Currently, two official plugins are available:
+UX/UI designers
+Shera Morris
+Julio Coraspe
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Software Engineers
+Brandi McDill
+Genevive Oliva
+Michael Watson
 
-## React Compiler
+Link to Figma: https://www.figma.com/design/k8fXpybZENtGusfsi6ciMc/Feb-Code-Jam?node-id=112-584&p=f&t=2qjiAtp6YE7DvypP-0
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# five_nodes-code_jam
+Link to GitHub: https://github.com/brandimcdill/five_nodes-code_jam
