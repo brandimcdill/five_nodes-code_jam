@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer";
 import Landing from "../Landing/Landing";
 import NavBar from "../NavBar/NavBar";
 import CalendarComponent from "../Calendar/Calendar";
+import Settings from "../Settings/Settings";
 
 import type { Person, Memory } from "../../Utils/API";
 import { createPerson, deletePerson, createMemory, getPerson } from "../../Utils/API";
@@ -158,6 +159,7 @@ export default function App() {
               />
             }
           />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
 
         <People
