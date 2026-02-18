@@ -1,0 +1,40 @@
+.toggle_switch{
+    width: 60px;
+    height: 30px;
+    position: relative; 
+    border: 2px solid #7e7e7e;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.toggle_switch:hover{
+    border: 2px solid black;
+}
+.toggle_switch__checkbox{
+    opacity: 0;
+}
+.toggle_switch__checkbox{
+   background-color: grey;
+   width: 30px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    left: 0;
+}
+.toggle_switch__text{
+    position: absolute;
+    top: 30%;
+    font-size: 12px;
+    font-family: DM Sans, sans-serif;
+    font-weight: 500;
+    line-height: 1;
+}
+.toggle_switch__text-light{
+    left: 5px;
+    color: #000;
+}   
+.toggle_switch__text-dark{
+    right: 5px;
+    color: #fff;
+}

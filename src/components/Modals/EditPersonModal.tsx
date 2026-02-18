@@ -1,26 +1,19 @@
 import "./ModalWithForm.css";
-import { IoClose } from "react-icons/io5";
-import {MdCancel} from "react-icons/md";
 
-function EditPersonModal({ modal, closeModal, handleEditPersonClick }) {
+function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
   return (
     <div
       className={`modal ${modal === "editPerson" ? "modal_opened" : ""}`}
       id="edit-person"
     >
       <div className="modal__container">
-        <button
-          type="button"
-          className="modal__btn modal__btn-cancel"
-          onClick={closeModal}
-        >
-          <IoClose className="modal__cancel-btn-image" />
-          Close
+        <button type="button" className="modal__btn modal__btn-discard">
+          <img src="" alt="" className="modal__discard-btn-image" />
         </button>
         <h2 className="modal__title">Edit Person</h2>
         <form id="" action="" className="modal__form" noValidate>
           <label htmlFor="edit-person-name-input" className="modal__label">
-            Person Name
+            Person Name *
             <input
               id="edit-person-name-input"
               type="text"
@@ -37,7 +30,7 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick }) {
           <label htmlFor="edit-person-nickname-input" className="modal__label">
             Nickname (optional)
             <input
-              id="edit-person-nickname-input"
+              id="edit-person-relationship-input"
               type="text"
               className="modal__input"
               name="name"
@@ -47,7 +40,7 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick }) {
             />
           </label>
           <label htmlFor="edit-person-avatar" className="modal__label">
-            Avatar (optional)
+            Avatar
             <input
               id="edit-person-avatar"
               type="url"

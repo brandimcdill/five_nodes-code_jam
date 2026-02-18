@@ -1,15 +1,27 @@
 import "./Header.css";
-import airplane from "../../assets/airplane.svg";
+import NavBar from "../NavBar/NavBar";
+import paper_plane_black from "../../assets/paper_plane_black.svg";
+import paper_to_plane from "../../assets/paper_to_plane.svg";
+
 function Header() {
   return (
     <div className="header">
       <div className="header__container">
-        <h1 className="header__title">Paper Thoughts</h1>
-        <img src={airplane} alt="Paper plane logo" className="header__logo" />
+       <img src={paper_plane_black} alt="Paper plane logo" className="header__logo" /> 
+       <h1 className="header__title">Paper Thoughts</h1>
+       <NavBar />
+       </div>
+     
+      <div className="header__description-container">
+        <img src={paper_to_plane} alt="Paper plane logo" className="header__description-logo" />
+      <div className="header__description-text">
+        <h1 className="header__description-title">Paper Thoughts</h1>
+        <p className="header__description-desktop"> Capture your thought. Turn them into something meaningful.</p>
       </div>
-      <p className="header__description">
+      <p className="header__description-mobile">
         Monthly memories for the people you care about
       </p>
+      </div>
     </div>
   );
 }
