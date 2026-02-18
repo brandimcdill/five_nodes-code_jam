@@ -10,6 +10,7 @@
   border-radius: 10px;
   padding: 20px;
   gap: 20px;
+  list-style-type: none;
   max-width: 100%;
 }
 
@@ -44,12 +45,7 @@
 
 .card__relationship {
   font-family: "Poppins-med";
-  font-size: 13px;
-}
-
-.card__name-container {
-  display: flex;
-  flex-direction: column;
+  font-size: 12px;
 }
 
 .avatar {
@@ -57,4 +53,21 @@
   width: 75px;
   height: 75px;
   object-fit: cover;
+}
+
+@media screen and (max-width: 627px) {
+  .cards__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #96a7c5;
+  }
+  .cards__information {
+    background-color: #593a16;
+  }
+  .cards__button-ellipsis {
+    display: block;
+    background: none;
+    border: none;
+  }
 }
