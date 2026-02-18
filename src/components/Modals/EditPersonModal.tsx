@@ -25,6 +25,7 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
               required
             />
             <span className="modal__error"></span>
+            <span className="modal__error"></span>
           </label>
           <label htmlFor="edit-person-nickname-input" className="modal__label">
             Nickname (optional)
@@ -38,7 +39,7 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
               maxLength={40}
             />
           </label>
-          <label htmlFor="edit-person-avatar" className="modal__label">
+          <label for="edit-person-avatar" class="modal__label">
             Avatar (optional)
             <input
               id="edit-person-avatar"

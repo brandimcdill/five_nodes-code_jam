@@ -61,6 +61,7 @@ function CreateMemoryModal({ modal }) {
           <button className="modal__btn entry__btn-save">Save</button>
         </div>
        </section>
-    </div>
+       </div>
   );
-}export default CreateMemoryModal;
+}
+    export default CreateMemoryModal;
