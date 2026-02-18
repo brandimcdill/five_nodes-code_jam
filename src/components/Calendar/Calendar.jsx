@@ -10,13 +10,7 @@ function CalendarComponent({ onChange, activeModal, selectedCard, value, handleN
   });
   return (
     <div className="calendar-container">
-      <Calendar
-        {...config}
-        onChange={onChange}
-        value={date}
-        activeModal={activeModal}
-        selectedCard={selectedCard}
-      />
+      
     </div>
   );
 }

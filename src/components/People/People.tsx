@@ -1,7 +1,7 @@
 import Cards from "../Cards/Cards";
 import { people } from "../../Utils/Constants/people";
 
-function People({ handleCardClick, selectedCard, handleDeleteConnectionClick }) {
+function People({ handleCardClick, selectedCard, handleDeleteConnectionClick, onClick }) {
   return (
     <div className="people">
       <ul className="cards__list">
@@ -9,7 +9,7 @@ function People({ handleCardClick, selectedCard, handleDeleteConnectionClick }) 
           <Cards
             key={person.id}
             card={person}
-            onclick={handleCardClick}
+            onclick={onClick}
           />
         ))}
       </ul>
