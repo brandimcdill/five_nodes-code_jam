@@ -1,0 +1,17 @@
+.togglt-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.toggle-switch__checkbox {
+    opacity: 0;
+    
+}
+.toggle-switch__circle {
+    position: absolute;
+    left: 0;
+    background-color: #000000;
+    border-radius: 50%;
+    transition: all .4s;
+}
