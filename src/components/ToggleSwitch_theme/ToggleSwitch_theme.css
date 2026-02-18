@@ -8,7 +8,7 @@
 
 }
 .toggle_switch:hover{
-    border: 2px solid black;
+    border: 2px solid rgb(246, 8, 111);
 }
 .toggle_switch__checkbox{
     opacity: 0;

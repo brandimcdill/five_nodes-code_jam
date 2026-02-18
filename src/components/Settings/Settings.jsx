@@ -12,7 +12,7 @@ const options = [
   ];
 function Settings() {
     return (
-        <div className="settings-page">
+        <form className="settings-form">
             <h1>Settings</h1>
             <p>Manage your workplace preferences and account details.</p>
             <section className="section-container">
@@ -61,7 +61,9 @@ function Settings() {
                     ))}
                 </div>
             </section>
-        </div>
+            <button type="submit" className="save-button">Save Changes</button>
+            <button type="button" className="cancel-button">Cancel</button>
+        </form>
     );
 }   
 
