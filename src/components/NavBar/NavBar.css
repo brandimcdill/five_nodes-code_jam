@@ -22,7 +22,7 @@
 
 @media screen and (max-width: 627px) {
   .navbar {
-    bottom: 0;
+    bottom: 0px;
     justify-content: space-evenly;
     align-items: center;
   }
@@ -32,5 +32,7 @@
   }
   .navbar__mobile-only-icon {
     display: block;
+  }
+  .navbar__link {
   }
 }
