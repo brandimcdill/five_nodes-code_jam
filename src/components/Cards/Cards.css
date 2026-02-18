@@ -42,7 +42,7 @@
 }
 .card__info {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 .card__name {
   font-family: Poppins;
@@ -52,6 +52,11 @@
 .card__relationship {
   font-family: "Poppins-med";
   font-size: 12px;
+}
+
+.cards__button-save {
+  background: none;
+  border: none;
 }
 
 .avatar {
