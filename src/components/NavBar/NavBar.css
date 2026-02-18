@@ -9,6 +9,7 @@
   padding: 0;
 }
 .navbar__container {
+  display: flex;
 }
 .navbar__mobile-only-icon {
   display: none;

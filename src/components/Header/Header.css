@@ -12,16 +12,26 @@
 }
 .header__description-container {
   margin: 3px 0 0 0;
-  padding: 50px;
   background: #96a7c5;
+  display: flex;
+  justify-content: space-between;
 }
 .header__description-title {
-  font: 120px "Jaro";
+  font-family: "Jaro", sans-serif;
+  font-size: 80px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  width: 642px;
+}
+.header__description-logo {
+  width: 844px;
+  height: 409.8px;
+  padding: 20px;
 }
 .header__description-desktop {
   display: block;
-  display: flex;
-  justify-content: flex-end;
+  margin: 0;
 }
 .header__description-mobile {
   display: none;
