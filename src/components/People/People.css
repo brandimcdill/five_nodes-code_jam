@@ -1,0 +1,10 @@
+.your-people{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #593A16;
+    width: 600px;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 10px;
+}
