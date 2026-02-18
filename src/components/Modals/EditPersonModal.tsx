@@ -1,6 +1,6 @@
 import "./ModalWithForm.css";
 
-function EditPersonModal({ modal, setModal }) {
+function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
   return (
     <div
       className={`modal ${modal === "editPerson" ? "modal_opened" : ""}`}
@@ -11,8 +11,8 @@ function EditPersonModal({ modal, setModal }) {
           <img src="" alt="" className="modal__discard-btn-image" />
         </button>
         <h2 className="modal__title">Edit Person</h2>
-        <form id="" action="" className="modal__form" novalidate>
-          <label for="edit-person-name-input" className="modal__label">
+        <form id="" action="" className="modal__form" noValidate>
+          <label htmlFor="edit-person-name-input" className="modal__label">
             Person Name
             <input
               id="edit-person-name-input"
@@ -20,13 +20,13 @@ function EditPersonModal({ modal, setModal }) {
               className="modal__input"
               name="name"
               placeholder="e.g., Juan"
-              minlength="2"
-              maxlength="40"
+              minLength={2}
+              maxLength={40}
               required
             />
             <span className="modal__error"></span>
           </label>
-          <label for="edit-person-nickname-input" className="modal__label">
+          <label htmlFor="edit-person-nickname-input" className="modal__label">
             Nickname (optional)
             <input
               id="edit-person-nickname-input"
@@ -34,11 +34,11 @@ function EditPersonModal({ modal, setModal }) {
               className="modal__input"
               name="name"
               placeholder="e.g., best friend"
-              minlength="2"
-              maxlength="40"
+              minLength={2}
+              maxLength={40}
             />
           </label>
-          <label for="edit-person-avatar" className="modal__label">
+          <label htmlFor="edit-person-avatar" className="modal__label">
             Avatar (optional)
             <input
               id="edit-person-avatar"

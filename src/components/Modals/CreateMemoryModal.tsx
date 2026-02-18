@@ -13,7 +13,7 @@ function CreateMemoryModal({ modal }) {
         <div className="entry__entry-container">
           <p className="entry__date"></p>
           <p className="entry__title">New Memory</p>
-          <label for="entry-note-input" className="entry__label">
+          <label htmlFor="entry-note-input" className="entry__label">
             Note
             <input
               id="entry-note-input" 
@@ -22,11 +22,11 @@ function CreateMemoryModal({ modal }) {
               name="note" 
               placeholder="What are you thinking about?"
               required
-              minlength="2"
-              maxlength="200" 
+              minLength={2}
+              maxLength={200} 
             />
           </label>
-          <label for="entry-link-input" className="entry__link">
+          <label htmlFor="entry-link-input" className="entry__link">
             Link
             <input
               id="entry-link-input" 
@@ -36,7 +36,7 @@ function CreateMemoryModal({ modal }) {
               placeholder="https://..."
             />
           </label>
-          <label for="entry-image-link-input" clasName="entry__image">
+          <label htmlFor="entry-image-link-input" className="entry__image">
             <img src="" alt="Paper clip image" className="entry__image-paperclip" />
             <input 
               id="entry-image-input"
@@ -44,15 +44,15 @@ function CreateMemoryModal({ modal }) {
               className="entry__image-input"
               name="link"/>
           </label>
-          <label for="entry-gift-card-input" className="entry__gift-card">
+          <label htmlFor="entry-gift-card-input" className="entry__gift-card">
             <img src="" alt="Camera image" className="entry__gift-card-camera" />
             <input 
               id="entry-gift-card-input"
               type="text" 
               className="entry__gift-card-input"
               name="card-number" 
-              minlength="2"
-              maxlength="20" 
+              minLength={2}
+              maxLength={20} 
             />
           </label>
           <button className="modal__btn entry__btn-cancel">

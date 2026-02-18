@@ -47,25 +47,25 @@ const DeletePersonModalStyles: DeletePersonModalStyles = {
   }
 }
 
-function DeletePersonModal({ modal }) {
-    return (
-        <div
-      className={`modal ${modal === "deletePerson" ? "modal_opened" : ""}`}
-      id="delete-person"
-      style={DeletePersonModalStyles.container}
+function DeletePersonModal({ modal, handleDeleteConnectionClick, closeModal }) {
+  return (
+    <div
+    className={`modal ${modal === "deletePerson" ? "modal_opened" : ""}`}
+    id="delete-person"
+    style={DeletePersonModalStyles.container}
     >
-        <h3 className="modal__delete-person-title" style={DeletePersonModalStyles.title}>Delete Connection?</h3>
-        <p className="modal__delete-person-text" style={DeletePersonModalStyles.text}>
-          Are you sure you want to delete<span
-            className="modal__delete-person-name"
-          ></span>? This will delete all memories associated with this person.
-        </p>
-        <div className="modal__delete-person-buttons" style={DeletePersonModalStyles.buttonsContainer}>
-          <button className="modal__btn modal__btn-delete-cancel" style={DeletePersonModalStyles.buttonCancel}>
-            <img src="" alt="Cross mark" className="modal__btn-cancel-delete" />
-            Cancel</button>
-          <button className="modal__btn modal__btn-delete" style={DeletePersonModalStyles.buttonSave}>Save</button>
-        </div>
-      </div>)
+      <h3 className="modal__delete-person-title" style={DeletePersonModalStyles.title}>Delete Connection?</h3>
+      <p className="modal__delete-person-text" style={DeletePersonModalStyles.text}>
+        Are you sure you want to delete<span
+          className="modal__delete-person-name"
+        ></span>? This will delete all memories associated with this person.
+      </p>
+      <div className="modal__delete-person-buttons" style={DeletePersonModalStyles.buttonsContainer}>
+        <button className="modal__btn modal__btn-delete-cancel" type="button" style={DeletePersonModalStyles.buttonCancel} onClick={closeModal}>
+          <img src="" alt="Cross mark" className="modal__btn-cancel-delete" />
+          Cancel</button>
+        <button className="modal__btn modal__btn-delete" type="button" style={DeletePersonModalStyles.buttonSave} onClick={handleDeleteConnectionClick}>Save</button>
+      </div>
+    </div>)
 }
 export default DeletePersonModal;
