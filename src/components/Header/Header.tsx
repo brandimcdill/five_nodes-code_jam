@@ -8,8 +8,9 @@ function Header() {
       <div className="header__container">
        <img src={paper_plane_black} alt="Paper plane logo" className="header__logo" /> 
        <h1 className="header__title">Paper Thoughts</h1>
-      </div>
-      <NavBar />
+       <NavBar />
+       </div>
+     
       <div className="header__description-container">
         <img src={paper_to_plane} alt="Paper plane logo" className="header__description-logo" />
         <h1 className="header__description-title">Paper Thoughts</h1>
