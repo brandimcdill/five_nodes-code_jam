@@ -18,6 +18,14 @@ import { get } from "node:http";
 
 // Types
 
+type Person = {
+  id: number;
+  name: string;
+  relationship: string;
+  avatar?: string;
+  memories?: Memory[]; // <-- Add this line
+};
+
 type MemoryInput = {
   title: string;
   note: string;
@@ -37,7 +45,8 @@ type ModalType =
 
 // Component
 
-export default function App() {
+function App() {
+
   const [activeModal, setActiveModal] = useState<ModalType>("");
 
   const [date, setDate] = useState<Date>(new Date());
@@ -169,3 +178,4 @@ export default function App() {
     </div>
   );
 }
+export default App;

@@ -25,6 +25,7 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
               required
             />
             <span className="modal__error"></span>
+            <span className="modal__error"></span>
           </label>
           <label htmlFor="edit-person-nickname-input" classNameName="modal__label">
             Nickname (optional)
