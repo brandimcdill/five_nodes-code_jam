@@ -4,8 +4,29 @@
   padding: 0;
 }
 .header__container {
+  display: flex;
 }
 
 .header__title {
   margin: 0;
+}
+.header__description-container {
+  padding: 50px;
+  background: #96a7c5;
+}
+.header__description-desktop {
+  display: block;
+  display: flex;
+  justify-content: flex-end;
+}
+.header__description-mobile {
+  display: none;
+}
+@media screen and (max-width: 627px) {
+  .header__description-desktop {
+    display: none;
+  }
+  .header__description-mobile {
+    display: block;
+  }
 }
