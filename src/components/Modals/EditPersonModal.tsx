@@ -1,6 +1,7 @@
 import "./ModalWithForm.css";
 import { MdCancel } from "react-icons/md";
 
+
 function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
   return (
     <div
