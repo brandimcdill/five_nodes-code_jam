@@ -1,7 +1,6 @@
 import "./Cards.css";
 import paper_plane from "../../assets/paper_plane.svg";
 import { FaPencilAlt } from "react-icons/fa";
-import "./Cards.css";
 function Cards({ onclick, card, handleCardClick, handleEditConnectionClick }) {
   const { name, relationship, avatar } = card;
   const handleClick = () => {
