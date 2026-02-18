@@ -1,14 +1,26 @@
-.togglt-switch {
+.toggle_switch {
+    width: 60px;
+    height: 30px;
+    border: 2px solid #7e7e7e;
+    border-radius: 20px;
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-.toggle-switch__checkbox {
-    opacity: 0;
+    cursor: pointer;
     
 }
-.toggle-switch__circle {
+.toggle_switch:hover{
+    border: 2px solid black;
+}
+.toggle_switch__checkbox {
+    opacity: 0;
+}
+.toggle_switch__checkbox:checked - .toggle_switch__circle {
+    left: 30px;
+}
+
+.toggle_switch__circle {
+    width: 30px;
+    height: 30px;
     position: absolute;
     left: 0;
     background-color: #000000;
