@@ -1,7 +1,8 @@
 import "./Header.css";
+import NavBar from "../NavBar/NavBar";
 import paper_plane_black from "../../assets/paper_plane_black.svg";
 import paper_to_plane from "../../assets/paper_to_plane.svg";
-import NavBar from "../NavBar/NavBar";
+
 function Header() {
   return (
     <div className="header">

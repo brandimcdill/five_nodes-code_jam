@@ -40,7 +40,9 @@
   height: 240px;
   overflow-wrap: break-word;
   text-align: end;
+  padding-right: 10px;
 }
+
 .header__description-logo {
   width: 844px;
   height: 309.8px;
