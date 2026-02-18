@@ -56,7 +56,7 @@ function DeletePersonModal({ modal }) {
         <h3 className="modal__delete-person-title" style={DeletePersonModalStyles.title}>Delete Connection?</h3>
         <p className="modal__delete-person-text" style={DeletePersonModalStyles.text}>
           Are you sure you want to delete<span
-            classNameName="modal__delete-person-name"
+            className="modal__delete-person-name"
           ></span>? This will delete all memories associated with this person.
         </p>
         <div className="modal__delete-person-buttons" style={DeletePersonModalStyles.buttonsContainer}>
