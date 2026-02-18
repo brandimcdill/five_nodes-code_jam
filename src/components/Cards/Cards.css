@@ -40,38 +40,18 @@
   border: 4px solid #01bfe4;
   border-radius: 16px;
 }
-
-.cards__button-ellipsis {
-  display: none;
-}
-
-.card__name-container {
+.card__info {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
-
 .card__name {
-  font-family: "Poppins";
+  font-family: Poppins;
   font-size: 16px;
-  margin: 0;
-  padding: 15px 0;
 }
 
 .card__relationship {
   font-family: "Poppins-med";
   font-size: 12px;
-  margin: 0;
-  padding-bottom: 16px;
-}
-
-.cards__button-save {
-  background: none;
-  border: none;
-}
-
-.card__info {
-  display: flex;
-  flex-direction: column;
 }
 
 .avatar {
