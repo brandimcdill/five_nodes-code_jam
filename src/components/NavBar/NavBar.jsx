@@ -4,6 +4,7 @@ import Account from "../Account/Account"
 import home_icon from "../../assets/home_icon.svg";
 import acct_icon from "../../assets/acct_icon.svg";
 import settings_icon from "../../assets/settings_icon.svg";
+import paper_plane_black from "../../assets/paper_plane_black.svg";
 
 import "./NavBar.css";
 
@@ -11,6 +12,12 @@ function NavBar() {
   return (
     <nav className="navbar">
       <div className="navbar__container">
+     <div className="logo__container">
+               <img src={paper_plane_black} alt="Paper plane logo" className="header__logo" /> 
+               <h1 className="logo__title">Paper Thoughts</h1>
+              </div> 
+              
+        
         <NavLink to="/" className="navbar__link">
           <img
             src={home_icon}

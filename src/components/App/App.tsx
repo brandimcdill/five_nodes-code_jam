@@ -162,22 +162,17 @@ export default function App() {
   return (
     <div className="page">
       <div className="page__content">
-        <Header />
         <NavBar />
+        
         <Routes>
+          
           <Route path="/landing" element={<Landing />} />
           <Route
             path="/"
-            element={
-              <CalendarComponent
-                onChange={setDate}
-                activeModal={activeModal}
-                selectedCard={selectedCard}
-                value={date}
-                handleNewMemory={handleNewMemory}
-              />
-            }
+            element={<Header />}
           />
+          <Route path="/calendar" element={<CalendarComponent onChange={setDate} value={date} activeModal={activeModal}
+                selectedCard={selectedCard} handleNewMemory={handleNewMemory} />} /> 
           <Route path="/settings" element={<Settings />} />
           <Route path="/account" element={<Account />} />
         </Routes>

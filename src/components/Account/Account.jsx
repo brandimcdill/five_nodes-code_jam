@@ -29,11 +29,11 @@ function Account() {
                 <h2 className="section-header">Privacy</h2>
                 <h3 className="section_sub-header">Payment method</h3>
                 <img src={pmt} alt="payment method" className="payment-method-image"/>
-                <form>
+                
                 <h3 className="section_sub-header_delete">Danger Zone</h3>
                 <p className="section-description">Once you delete your account, there is no going back. Please be certain.</p>
                 <button type="submit" className="delete-account-button">Delete Account</button>
-                </form>
+                
             </section>
             <button type="button" className="cancel-button">Cancel</button>
             <button type="submit" className="save-button">Save</button>
