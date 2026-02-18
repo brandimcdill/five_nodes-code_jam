@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Jaro", sans-serif;
+  font-weight: 700;
+  src: url("./Jaro-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Jaro", sans-serif;
+  font-weight: 500;
+  src: url("./Jaro-Regular.ttf") format("truetype");
+}
