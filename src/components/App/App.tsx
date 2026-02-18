@@ -38,11 +38,7 @@ type ModalType =
 // Component
 
 export default function App() {
-<<<<<<< HEAD
-  const [activeModal, setActiveModal] = useState<ModalType>("deletePerson");
-=======
   const [activeModal, setActiveModal] = useState<ModalType>("");
->>>>>>> 7489e29f23bff2fb56cbfab09ddc87c4c621060b
 
   const [date, setDate] = useState<Date>(new Date());
   const [people, setPeople] = useState<Person[]>([]);
