@@ -1,5 +1,5 @@
 import paper_plane from "../../assets/paper_plane.svg";
-
+import "./Cards.css";
 function Cards({ onclick, card }) {
   const handleCardClick = () => {
     onclick(card);
