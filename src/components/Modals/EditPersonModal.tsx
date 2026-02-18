@@ -1,14 +1,21 @@
 import "./ModalWithForm.css";
+import { IoClose } from "react-icons/io5";
+import {MdCancel} from "react-icons/md";
 
-function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
+function EditPersonModal({ modal, closeModal, handleEditPersonClick }) {
   return (
     <div
       className={`modal ${modal === "editPerson" ? "modal_opened" : ""}`}
       id="edit-person"
     >
       <div className="modal__container">
-        <button type="button" className="modal__btn modal__btn-discard">
-          <img src="" alt="" className="modal__discard-btn-image" />
+        <button
+          type="button"
+          className="modal__btn modal__btn-cancel"
+          onClick={closeModal}
+        >
+          <IoClose className="modal__cancel-btn-image" />
+          Close
         </button>
         <h2 className="modal__title">Edit Person</h2>
         <form id="" action="" className="modal__form" noValidate>
@@ -27,7 +34,7 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
             <span className="modal__error"></span>
             <span className="modal__error"></span>
           </label>
-          <label htmlFor="edit-person-nickname-input" classNameName="modal__label">
+          <label htmlFor="edit-person-nickname-input" className="modal__label">
             Nickname (optional)
             <input
               id="edit-person-nickname-input"
@@ -49,11 +56,16 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
               placeholder=""
             />
           </label>
-          <button className="modal__btn modal__btn-cancel">
-            <img src="" alt="Cross mark" className="modal__cancel-btn-image" />
+          <button className="modal__btn modal__btn-cancel" onClick={closeModal}>
+            <MdCancel className="modal__cancel-btn-image" />
             Cancel
           </button>
-          <button className="modal__btn modal__btn-save">Save</button>
+          <button
+            className="modal__btn modal__btn-save"
+            onClick={handleEditPersonClick}
+          >
+            Save
+          </button>
         </form>
       </div>
     </div>

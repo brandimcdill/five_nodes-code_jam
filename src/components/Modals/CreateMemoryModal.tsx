@@ -1,4 +1,6 @@
 import "./ModalWithForm.css";
+import { FaPaperclip } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 
 function CreateMemoryModal({ modal }) {
   return (
@@ -25,7 +27,7 @@ function CreateMemoryModal({ modal }) {
 
           <label htmlFor="entry-gift-card-input" className="entry__gift-card">
 
-            <img src="" alt="Camera image" className="entry__gift-card-camera" />
+            <img src="Gift Card" alt="Camera image" className="entry__gift-card-camera" />
             <input 
               id="entry-gift-card-input"
               type="text" 
@@ -36,7 +38,7 @@ function CreateMemoryModal({ modal }) {
             />
           </label>
           <button className="modal__btn entry__btn-cancel">
-            <img src="" alt="Cross mark" className="entry__btn-cancel-image" />
+            <IoClose className="entry__btn-cancel-image" />
             Cancel</button>
           <button className="modal__btn entry__btn-save">Save</button>
         </div>

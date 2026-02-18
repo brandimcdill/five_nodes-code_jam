@@ -72,6 +72,11 @@ export default function App() {
     setSelectedCard(null);
   };
 
+  const handleEditConnectionClick = (card: Person) => {
+    setSelectedCard(card);
+    setActiveModal("editPerson");
+  };
+
   const handleNewConnectionClick = (card: Person) => {
     setSelectedCard(card);
     setActiveModal("addConnection");
@@ -176,9 +181,9 @@ export default function App() {
         <People
           handleDeleteConnectionClick={handleDeleteConnectionClick}
           selectedCard={selectedCard}
-          people={people}
           handleCardClick={handleCardClick}
           onClick={handleCardClick}
+          handleEditConnectionClick={handleEditConnectionClick}
         />
 
         <Footer />
@@ -207,6 +212,7 @@ export default function App() {
           selectedCard={selectedCard}
           activeModal={activeModal}
           date={date}
+
         />
       </div>
     </div>
