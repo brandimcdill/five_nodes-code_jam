@@ -27,19 +27,19 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
             <span className="modal__error"></span>
             <span className="modal__error"></span>
           </label>
-          <label htmlFor="edit-person-nickname-input" classNameName="modal__label">
+          <label htmlFor="edit-person-nickname-input" className="modal__label">
             Nickname (optional)
             <input
               id="edit-person-nickname-input"
               type="text"
-              classNameName="modal__input"
+              className="modal__input"
               name="name"
               placeholder="e.g., best friend"
               minLength={2}
               maxLength={40}
             />
           </label>
-          <label htmlFor="edit-person-avatar" classNameName="modal__label">
+          <label htmlFor="edit-person-avatar" className="modal__label">
             Avatar (optional)
             <input
               id="edit-person-avatar"
@@ -53,7 +53,7 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
             <img src="" alt="Cross mark" className="modal__cancel-btn-image" />
             Cancel
           </button>
-          <button classNameName="modal__btn modal__btn-save">Save</button>
+          <button className="modal__btn modal__btn-save">Save</button>
         </form>
       </div>
     </div>

@@ -14,7 +14,6 @@ function CreateMemoryModal({ modal }) {
           <p className="entry__date"></p>
           <p className="entry__title">New Memory</p>
           <label htmlFor="entry-note-input" className="entry__label">
-
             Note
             <input
               id="entry-note-input" 
@@ -37,8 +36,8 @@ function CreateMemoryModal({ modal }) {
               placeholder="https://..."
             />
           </label>
-
           <label htmlFor="entry-image-link-input" className="entry__image">
+
             <img src="" alt="Paper clip image" className="entry__image-paperclip" />
             <input 
               id="entry-image-input"
@@ -46,8 +45,8 @@ function CreateMemoryModal({ modal }) {
               className="entry__image-input"
               name="link"/>
           </label>
-
           <label htmlFor="entry-gift-card-input" className="entry__gift-card">
+
             <img src="" alt="Camera image" className="entry__gift-card-camera" />
             <input 
               id="entry-gift-card-input"

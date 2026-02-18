@@ -47,7 +47,7 @@ const DeletePersonModalStyles: DeletePersonModalStyles = {
   }
 }
 
-function DeletePersonModal({ modal }) {
+function DeletePersonModal({ modal, handleDeleteConnectionClick, closeModal }) {
     return (
         <div
       className={`modal ${modal === "deletePerson" ? "modal_opened" : ""}`}

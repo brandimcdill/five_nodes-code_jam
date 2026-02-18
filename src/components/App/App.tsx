@@ -45,8 +45,7 @@ type ModalType =
 
 // Component
 
-function App() {
-
+export default function App() {
   const [activeModal, setActiveModal] = useState<ModalType>("");
 
   const [date, setDate] = useState<Date>(new Date());
@@ -170,12 +169,11 @@ function App() {
 
         <Footer />
 
-        <EditPersonModal modal={activeModal} setModal={setActiveModal} closeModal={handleModalClose} />
-        <CreatePersonModal modal={activeModal} setModal={setActiveModal} handleAddNewConnection={handleAddNewConnection} closeModal={handleModalClose} />
-        <DeletePersonModal modal={activeModal} setModal={setActiveModal} handleDeleteConnectionClick={handleDeleteConnectionClick} closeModal={handleModalClose}  />
-        <CreateMemoryModal modal={activeModal} setModal={setActiveModal} handleNewMemory={handleNewMemory} closeModal={handleModalClose} />
+        <EditPersonModal modal={activeModal} closeModal={handleModalClose} handleEditPersonClick={handleEditPersonClick} />
+        <CreatePersonModal modal={activeModal}  handleAddNewConnection={handleAddNewConnection} closeModal={handleModalClose} />
+        <DeletePersonModal modal={activeModal}  handleDeleteConnectionClick={handleDeleteConnectionClick} closeModal={handleModalClose}  />
+        <CreateMemoryModal modal={activeModal}  handleNewMemory={handleNewMemory} closeModal={handleModalClose} />
       </div>
     </div>
   );
-}
-export default App;
+};
