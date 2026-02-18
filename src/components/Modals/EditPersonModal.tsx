@@ -3,6 +3,7 @@ import "./ModalWithForm.css";
 interface EditPersonModalStyles {
   container: React.CSSProperties;
   title: React.CSSProperties;
+  buttonDiscard: React.CSSProperties;
   buttonsContainer: React.CSSProperties;
 }
 
@@ -10,10 +11,10 @@ const EditPersonModalStyles: EditPersonModalStyles = {
   container: {
     backgroundColor: "#ff657b",
     height: "530px",
-    width: "352px",
+    width: "270px",
     border: "4px solid #ddcea7",
     borderRadius: "16px",
-    padding: "27px auto 27px"
+    padding:"26px 26px 0"
   },
   title: {
     margin: "0",
@@ -22,8 +23,13 @@ const EditPersonModalStyles: EditPersonModalStyles = {
     display: "flex",
     justifyContent: "center",
     gap: "17px"
+  },
+  buttonDiscard: {
+    background: "none",
+    border: "none"
   }
 }
+
 
 
 function EditPersonModal({ modal, closeModal, handleEditPersonClick }) {
@@ -32,7 +38,7 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick }) {
       className={`modal ${modal === "editPerson" ? "modal_opened" : ""}`}
       id="edit-person"
     >
-      <button type="button" className="modal__btn modal__btn-discard">
+      <button type="button" className="modal__btn modal__btn-discard" style={EditPersonModalStyles.buttonDiscard}>
         <img src="" alt="Trash bin image" className="modal__discard-btn-image" />
       </button>
       <div className="modal__container" style={EditPersonModalStyles.container}>
@@ -80,7 +86,7 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick }) {
               <img src="" alt="Cross mark" className="modal__cancel-btn-image" />
               Cancel
             </button>
-            <button className="modal__btn modal__btn-create">Create</button>
+            <button className="modal__btn modal__btn-create">Save</button>
           </div>
         </form>
       </div>

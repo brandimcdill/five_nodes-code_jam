@@ -38,10 +38,24 @@
   .navbar__container {
     background: #fafaf8f2;
     outline-style: 2px solid #0000;
+    position: fixed;
+    bottom: 50px;
+    width: 327px;
+    height: 75px;
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid #593a16;
+    border-radius: 20px;
   }
   .navbar__mobile-only-icon {
     display: block;
   }
   .navbar__link {
+    color: #4a5565;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
 }

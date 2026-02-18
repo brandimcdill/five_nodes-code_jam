@@ -1,3 +1,4 @@
+import "./Cards.css";
 import paper_plane from "../../assets/paper_plane.svg";
 
 function Cards({ onclick, card }) {
