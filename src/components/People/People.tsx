@@ -1,18 +1,20 @@
-import add_icon from "../../assets/add_icon.png";
 import Cards from "../Cards/Cards";
-import "./People.css";
+import { people } from "../../Utils/Constants/people";
 
-function People({ handleCardClick, selectedCard, people}) {
+function People({ handleCardClick, selectedCard, handleDeleteConnectionClick }) {
   return (
-    <section className="your-people">
-      <h2 className="your-people__title">Your Connections</h2>
-      <button type="button" className="your-people__add-btn">
-        <img src={add_icon} alt="" className="your-people__add-btn-image" />
-      </button>
-      <ul className="your-people__list">
-        <Cards handleCardClick={handleCardClick} card={selectedCard} people={people}/>
+    <div className="people">
+      <ul className="cards__list">
+        {people.map((person) => (
+          <Cards
+            key={person.id}
+            card={person}
+            onclick={handleCardClick}
+          />
+        ))}
       </ul>
-    </section>
+    </div>
   );
 }
+
 export default People;
