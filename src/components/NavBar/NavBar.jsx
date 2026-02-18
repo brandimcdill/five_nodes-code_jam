@@ -10,18 +10,26 @@ function NavBar() {
     <nav className="navbar">
       <div className="navbar__container">
         <NavLink to="/" className="navbar__link">
-          <img src={home_icon} alt="Home Icon" className="navbar__icon" />
+          <img
+            src={home_icon}
+            alt="Home Icon"
+            className="navbar__mobile-only-icon"
+          />
           Home
         </NavLink>
         <NavLink to="/account" className="navbar__link">
-          <img src={acct_icon} alt="Account Icon" className="navbar__icon" />
+          <img
+            src={acct_icon}
+            alt="Account Icon"
+            className="navbar__mobile-only-icon"
+          />
           Account
         </NavLink>
         <NavLink to="/settings" className="navbar__link">
           <img
             src={settings_icon}
             alt="Settings Icon"
-            className="navbar__icon"
+            className="navbar__mobile-only-icon"
           />
           Settings
         </NavLink>
