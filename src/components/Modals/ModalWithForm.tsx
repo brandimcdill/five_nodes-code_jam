@@ -1,5 +1,8 @@
 import "../Modals/ModalWithForm.css";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 12247b85fbf99db688f643b624c6586a581a99ab
 //AI help
 type ModalWithFormProps = {
   children: React.ReactNode;
@@ -47,6 +50,9 @@ function ModalWithForm({
         </div>
     )
 };
+<<<<<<< HEAD
 >>>>>>> 713ceefa160c1b7049ae141c72c61bfd31bc9bee
+=======
+>>>>>>> 12247b85fbf99db688f643b624c6586a581a99ab
 
 export default ModalWithForm;

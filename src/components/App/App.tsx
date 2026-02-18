@@ -45,9 +45,15 @@ type ModalType =
 
 // Component
 
+<<<<<<< HEAD
 
 function App() {
   const [activeModal, setActiveModal] = useState<ModalType>("");
+=======
+export default function App() {
+  const [activeModal, setActiveModal] = useState<ModalType>("");
+
+>>>>>>> 12247b85fbf99db688f643b624c6586a581a99ab
   const [date, setDate] = useState<Date>(new Date());
   const [people, setPeople] = useState<Person[]>([]);
   const [selectedCard, setSelectedCard] = useState<Person | null>(null);
@@ -176,5 +182,4 @@ function App() {
       </div>
     </div>
   );
-}
-export default App;
+};
