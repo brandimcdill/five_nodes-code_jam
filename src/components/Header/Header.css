@@ -14,19 +14,30 @@
   padding: 5px;
   font-weight: 600;
 }
+
 .header__description-container {
   margin: 3px 0 0 0;
   background: #96a7c5;
   display: flex;
   justify-content: center;
 }
+
+.header__description-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
 .header__description-title {
   font-family: "Jaro", sans-serif;
   font-size: 80px;
   font-weight: 400;
   margin: 0;
   padding: 0;
-  width: 642px;
+  width: 500px;
+  height: 240px;
+  overflow-wrap: break-word;
+  text-align: end;
 }
 .header__description-logo {
   width: 844px;

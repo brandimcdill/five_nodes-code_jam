@@ -13,8 +13,10 @@ function Header() {
      
       <div className="header__description-container">
         <img src={paper_to_plane} alt="Paper plane logo" className="header__description-logo" />
+      <div className="header__description-text">
         <h1 className="header__description-title">Paper Thoughts</h1>
-      <p className="header__description-desktop"> Capture your thought. Turn them into something meaningful.</p>
+        <p className="header__description-desktop"> Capture your thought. Turn them into something meaningful.</p>
+      </div>
       <p className="header__description-mobile">
         Monthly memories for the people you care about
       </p>
