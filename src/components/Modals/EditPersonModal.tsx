@@ -1,4 +1,8 @@
 import "./ModalWithForm.css";
+import { IoClose } from "react-icons/io5";
+import {MdCancel} from "react-icons/md";
+
+function EditPersonModal({ modal, closeModal, handleEditPersonClick }) {
 import modal_cancel_cross from "../../assets/modal_cancel.svg";
 import modal_save_add from "../../assets/modal_save.svg";
 import modal_trash_bin from "../../assets/modal_trash_bin.svg";
@@ -73,6 +77,8 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick }) {
             <span className="modal__error"></span>
             <span className="modal__error"></span>
           </label>
+          <label htmlFor="edit-person-nickname-input" className="modal__label">
+            Nickname (optional)
           <label htmlFor="edit-person-relationship-input" className="modal__label">
             Relationship
             <input

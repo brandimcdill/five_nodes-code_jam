@@ -10,26 +10,46 @@
   border-radius: 10px;
   padding: 20px;
   gap: 20px;
+  max-width: 100%;
 }
 
-.cards__information {
+.cards__button-edit {
   display: flex;
-  flex-direction: row;
+  background: none;
+  border: none;
+  cursor: pointer;
+  top: 10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.cards__face {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
   gap: 5px;
   background-color: white;
   width: 250px;
   height: 200px;
 }
-
-.card__name{
-    font-family: Poppins;
-    font-size: 16px;
+.card__info {
+  display: flex;
+  justify-content: space-between;
+}
+.card__name {
+  font-family: Poppins;
+  font-size: 16px;
 }
 
-.card__relationship{
-    font-family: "Poppins-med";
-    font-size: 12px;
+.card__relationship {
+  font-family: "Poppins-med";
+  font-size: 13px;
+}
+
+.card__name-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .avatar {
