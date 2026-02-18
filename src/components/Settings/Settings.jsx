@@ -1,6 +1,15 @@
 import './Settings.css';
+import paper_page from '../../assets/paper_page.svg';
+import paper_plane from '../../assets/paper_plane.svg';
+import paper_ball from '../../assets/paper_ball.svg';
 import ToggleSwitch_theme from '../ToggleSwitch_theme/ToggleSwitch_theme';
 import ToggleSwitch_basic from '../ToggleSwitch_basic/ToggleSwitch_basic';
+
+const options = [
+    { value: 'paper-plane', label: 'Paper Airplane', imageUrl: paper_plane },
+    { value: 'paper-page', label: 'Paper Page', imageUrl: paper_page },
+    { value: 'crumbled-paper-ball', label: 'Crumbled Paper Ball', imageUrl: paper_ball },
+  ];
 function Settings() {
     return (
         <div className="settings-page">
@@ -43,15 +52,15 @@ function Settings() {
                 <h2 className="section-title">PDF Export Style</h2>
                 <p className="section-description">Choose how your monthly thoughts are folded and presented in exported PDFs.</p>
                 <div className="pdf-style-options">
-                    <div className="pdf-style-option">
-                        </div>
-                    <div className="pdf-style-option">
-                        </div>
-                    <div className="pdf-style-option">
-                        </div>
+                    {options.map((option) => (
+                    <label className="section-header" key={option.value}>
+                    <input className="pdf-style-radio" type="radio" name="paper-group" value={option.value}/>
+                    <img src={option.imageUrl} alt={option.label}/>
+                     <p> {option.label}</p>
+                    </label>
+                    ))}
                 </div>
-
-              </section>
+            </section>
         </div>
     );
 }   

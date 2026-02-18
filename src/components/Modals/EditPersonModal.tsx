@@ -1,21 +1,14 @@
 import "./ModalWithForm.css";
-import { IoClose } from "react-icons/io5";
-import {MdCancel} from "react-icons/md";
 
-function EditPersonModal({ modal, closeModal, handleEditPersonClick }) {
+function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
   return (
     <div
       className={`modal ${modal === "editPerson" ? "modal_opened" : ""}`}
       id="edit-person"
     >
       <div className="modal__container">
-        <button
-          type="button"
-          className="modal__btn modal__btn-cancel"
-          onClick={closeModal}
-        >
-          <IoClose className="modal__cancel-btn-image" />
-          Close
+        <button type="button" className="modal__btn modal__btn-discard">
+          <img src="" alt="" className="modal__discard-btn-image" />
         </button>
         <h2 className="modal__title">Edit Person</h2>
         <form id="" action="" className="modal__form" noValidate>
