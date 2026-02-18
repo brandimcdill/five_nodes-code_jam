@@ -25,7 +25,7 @@ function Cards({ onclick, card, handleCardClick, handleEditConnectionClick }) {
           </div>
         </div>
         <div>
-          <button>
+          <button className="cards__button-save">
             <img
               src={paper_plane}
               alt="Paper Plane Icon"

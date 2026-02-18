@@ -25,6 +25,10 @@
   height: 20px;
 }
 
+.cards__button-pencil-icon {
+  display: none;
+}
+
 .cards__face {
   display: flex;
   flex-direction: column;
@@ -33,6 +37,8 @@
   background-color: white;
   width: 250px;
   height: 200px;
+  border: 4px solid #01bfe4;
+  border-radius: 16px;
 }
 
 .cards__button-ellipsis {
@@ -47,16 +53,25 @@
 .card__name {
   font-family: "Poppins";
   font-size: 16px;
+  margin: 0;
+  padding: 15px 0;
 }
 
 .card__relationship {
   font-family: "Poppins-med";
   font-size: 12px;
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+.cards__button-save {
+  background: none;
+  border: none;
 }
 
 .card__info {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .avatar {
