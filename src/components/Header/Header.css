@@ -1,11 +1,10 @@
 .header {
-  margin: 0;
-  padding: 0;
+  margin: 10px;
+  padding-top: 20px;
 }
 .header__container {
   display: flex;
-  background-color: #f8d120;
-  position: fixed;
+  align-items: center;
 }
 
 .header__title {

@@ -1,10 +1,46 @@
-.your-people {
+.people {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color: #593a16;
-  width: 600px;
+  background-color: #593a16;;
+  height: 100%;
   flex-wrap: wrap;
   padding: 20px;
   border-radius: 10px;
+  max-width: 100%;
+}
+
+.people__settings-btn {
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  margin: 0;
+  border-radius: 20px;
+}
+
+.people__title {
+  font-family: Poppins;
+  font-size: 24px;
+  color: white;
+  margin-top: 25px;
+}
+
+.people__subtitle {
+  font-family: "Poppins-med";
+  font-size: 16px;
+  color: white;
+  margin: 0;
+}
+
+.people__title-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.people__title-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
