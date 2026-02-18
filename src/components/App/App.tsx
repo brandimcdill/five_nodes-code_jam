@@ -9,13 +9,19 @@ import CalendarComponent from "../Calendar/Calendar";
 import Settings from "../Settings/Settings";
 
 import type { Person, Memory } from "../../Utils/API";
-import { createPerson, deletePerson, createMemory, getPerson } from "../../Utils/API";
+import {
+  createPerson,
+  deletePerson,
+  createMemory,
+  getPerson,
+} from "../../Utils/API";
 
 import EditPersonModal from "../Modals/EditPersonModal";
 import CreatePersonModal from "../Modals/CreatePersonModal";
 import DeletePersonModal from "../Modals/DeletePersonModal";
 import CreateMemoryModal from "../Modals/CreateMemoryModal";
 import { get } from "node:http";
+import ConnectionModal from "../Modals/ConnectionModal";
 
 // Types
 
@@ -59,12 +65,17 @@ export default function App() {
 
   const handleCardClick = (card: Person) => {
     setSelectedCard(card);
-    setActiveModal("editPerson");
+    setActiveModal("viewConnection");
   };
 
   const handleModalClose = () => {
     setActiveModal("");
     setSelectedCard(null);
+  };
+
+  const handleNewConnectionClick = (card: Person) => {
+    setSelectedCard(card);
+    setActiveModal("addConnection");
   }
 
   const handleAddNewConnection = (
@@ -80,23 +91,26 @@ export default function App() {
   const handleEditPersonClick = (
     id: number,
     name: string,
-    relationship: string,) => {
-      getPerson(id)
-        .then((person) => {
-          const updatedPerson: Person = {
-            ...person,
-            name,
-            relationship,
-          };
-          // Here you would typically update the person in storage and then update the state
-          setPeople((prevPeople) =>
-            prevPeople.map((person) => (person.id === id ? updatedPerson : person)),
-          );
-        })
-        .catch((error: unknown) => {
-          console.error("Error editing person:", error);
-        });
-    }
+    relationship: string,
+  ) => {
+    getPerson(id)
+      .then((person) => {
+        const updatedPerson: Person = {
+          ...person,
+          name,
+          relationship,
+        };
+        // Here you would typically update the person in storage and then update the state
+        setPeople((prevPeople) =>
+          prevPeople.map((person) =>
+            person.id === id ? updatedPerson : person,
+          ),
+        );
+      })
+      .catch((error: unknown) => {
+        console.error("Error editing person:", error);
+      });
+  };
 
   const handleDeleteConnectionClick = (card: Person) => {
     deletePerson(card.id)
@@ -142,9 +156,8 @@ export default function App() {
   return (
     <div className="page">
       <div className="page__content">
-        <NavBar />
         <Header />
-
+        <NavBar />
         <Routes>
           <Route path="/landing" element={<Landing />} />
           <Route
@@ -167,15 +180,37 @@ export default function App() {
           selectedCard={selectedCard}
           people={people}
           handleCardClick={handleCardClick}
+          onClick={handleCardClick}
         />
 
         <Footer />
 
-        <EditPersonModal modal={activeModal} closeModal={handleModalClose} handleEditPersonClick={handleEditPersonClick} />
-        <CreatePersonModal modal={activeModal}  handleAddNewConnection={handleAddNewConnection} closeModal={handleModalClose} />
-        <DeletePersonModal modal={activeModal}  handleDeleteConnectionClick={handleDeleteConnectionClick} closeModal={handleModalClose}  />
-        <CreateMemoryModal modal={activeModal}  handleNewMemory={handleNewMemory} closeModal={handleModalClose} />
+        <EditPersonModal
+          modal={activeModal}
+          closeModal={handleModalClose}
+          handleEditPersonClick={handleEditPersonClick}
+        />
+        <CreatePersonModal
+          modal={activeModal}
+          handleAddNewConnection={handleAddNewConnection}
+          closeModal={handleModalClose}
+        />
+        <DeletePersonModal
+          modal={activeModal}
+          handleDeleteConnectionClick={handleDeleteConnectionClick}
+          closeModal={handleModalClose}
+        />
+        <CreateMemoryModal
+          modal={activeModal}
+          handleNewMemory={handleNewMemory}
+          closeModal={handleModalClose}
+        />
+        <ConnectionModal
+          selectedCard={selectedCard}
+          activeModal={activeModal}
+          date={date}
+        />
       </div>
     </div>
   );
-};
+}
