@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Settings from "../Settings/Settings";
+import Account from "../Account/Account"
 import home_icon from "../../assets/home_icon.svg";
 import acct_icon from "../../assets/acct_icon.svg";
 import settings_icon from "../../assets/settings_icon.svg";
@@ -18,7 +19,7 @@ function NavBar() {
           />
           Home
         </NavLink>
-        <NavLink to="/account" className="navbar__link">
+        <NavLink to="/Account" className="navbar__link">
           <img
             src={acct_icon}
             alt="Account Icon"
