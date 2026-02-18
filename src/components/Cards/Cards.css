@@ -11,9 +11,21 @@
   padding: 20px;
   gap: 20px;
   list-style-type: none;
+  max-width: 100%;
 }
 
-.cards__information {
+.cards__button-edit {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  top: 10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.cards__face {
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -27,6 +39,11 @@
   display: none;
 }
 
+.card__name-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .card__name {
   font-family: "Poppins";
   font-size: 16px;
@@ -35,6 +52,11 @@
 .card__relationship {
   font-family: "Poppins-med";
   font-size: 12px;
+}
+
+.card__info {
+  display: flex;
+  justify-content: space-between;
 }
 
 .avatar {
