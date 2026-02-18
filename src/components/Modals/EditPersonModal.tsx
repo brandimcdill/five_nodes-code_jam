@@ -1,10 +1,14 @@
 import "./ModalWithForm.css";
+import modal_cancel_cross from "../../assets/modal_cancel.svg";
+import modal_save_add from "../../assets/modal_save.svg";
+import modal_trash_bin from "../../assets/modal_trash_bin.svg";
 
 interface EditPersonModalStyles {
   container: React.CSSProperties;
   title: React.CSSProperties;
-  buttonDiscard: React.CSSProperties;
   buttonsContainer: React.CSSProperties;
+  buttonDiscard: React.CSSProperties;
+  buttonSaveAndCancel: React.CSSProperties;
 }
 
 const EditPersonModalStyles: EditPersonModalStyles = {
@@ -22,11 +26,21 @@ const EditPersonModalStyles: EditPersonModalStyles = {
   buttonsContainer: {
     display: "flex",
     justifyContent: "center",
-    gap: "17px"
+    gap: "17px",
+    paddingTop: "15px"
   },
   buttonDiscard: {
     background: "none",
-    border: "none"
+    border: "none",
+    position: "relative",
+    right: "-270px",
+    bottom: "50px",
+  },
+  buttonSaveAndCancel: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "5px"
   }
 }
 
@@ -39,7 +53,7 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick }) {
       id="edit-person"
     >
       <button type="button" className="modal__btn modal__btn-discard" style={EditPersonModalStyles.buttonDiscard}>
-        <img src="" alt="Trash bin image" className="modal__discard-btn-image" />
+        <img src={modal_trash_bin} alt="Trash bin image" className="modal__discard-btn-image" />
       </button>
       <div className="modal__container" style={EditPersonModalStyles.container}>
         <h2 className="modal__title" style={EditPersonModalStyles.title}>Edit Connection</h2>
@@ -82,11 +96,13 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick }) {
             />
           </label>
           <div className="modal__edit-person-buttons" style={EditPersonModalStyles.buttonsContainer}>
-            <button className="modal__btn modal__btn-cancel">
-              <img src="" alt="Cross mark" className="modal__cancel-btn-image" />
+            <button className="modal__btn modal__btn-cancel" style={EditPersonModalStyles.buttonSaveAndCancel}>
+              <img src={modal_cancel_cross} alt="Cross mark" className="modal__cancel-btn-image" />
               Cancel
             </button>
-            <button className="modal__btn modal__btn-create">Save</button>
+            <button className="modal__btn modal__btn-create" style={EditPersonModalStyles.buttonSaveAndCancel}>
+              <img src={modal_save_add} alt="Add sign" className="modal__save-btn-image" />
+              Save</button>
           </div>
         </form>
       </div>
