@@ -45,8 +45,7 @@ type ModalType =
 
 // Component
 
-function App() {
-
+export default function App() {
   const [activeModal, setActiveModal] = useState<ModalType>("");
 
   const [date, setDate] = useState<Date>(new Date());
@@ -177,5 +176,4 @@ function App() {
       </div>
     </div>
   );
-}
-export default App;
+};

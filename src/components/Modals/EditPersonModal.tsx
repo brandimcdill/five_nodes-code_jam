@@ -39,7 +39,7 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
               maxLength={40}
             />
           </label>
-          <label for="edit-person-avatar" class="modal__label">
+          <label htmlFor="edit-person-avatar" className="modal__label">
             Avatar (optional)
             <input
               id="edit-person-avatar"
