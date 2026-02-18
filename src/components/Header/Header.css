@@ -5,6 +5,7 @@
 .header__container {
   display: flex;
   background-color: #f8d120;
+  position: fixed;
 }
 
 .header__title {
