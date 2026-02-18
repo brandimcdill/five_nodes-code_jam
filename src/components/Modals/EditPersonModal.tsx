@@ -1,19 +1,45 @@
 import "./ModalWithForm.css";
 
-function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
+interface EditPersonModalStyles {
+  container: React.CSSProperties;
+  title: React.CSSProperties;
+  buttonsContainer: React.CSSProperties;
+}
+
+const EditPersonModalStyles: EditPersonModalStyles = {
+  container: {
+    backgroundColor: "#ff657b",
+    height: "530px",
+    width: "352px",
+    border: "4px solid #ddcea7",
+    borderRadius: "16px",
+    padding: "27px auto 27px"
+  },
+  title: {
+    margin: "0",
+  },
+  buttonsContainer: {
+    display: "flex",
+    justifyContent: "center",
+    gap: "17px"
+  }
+}
+
+
+function EditPersonModal({ modal, closeModal, handleEditPersonClick }) {
   return (
     <div
       className={`modal ${modal === "editPerson" ? "modal_opened" : ""}`}
       id="edit-person"
     >
-      <div className="modal__container">
-        <button type="button" className="modal__btn modal__btn-discard">
-          <img src="" alt="" className="modal__discard-btn-image" />
-        </button>
-        <h2 className="modal__title">Edit Person</h2>
+      <button type="button" className="modal__btn modal__btn-discard">
+        <img src="" alt="Trash bin image" className="modal__discard-btn-image" />
+      </button>
+      <div className="modal__container" style={EditPersonModalStyles.container}>
+        <h2 className="modal__title" style={EditPersonModalStyles.title}>Edit Connection</h2>
         <form id="" action="" className="modal__form" noValidate>
           <label htmlFor="edit-person-name-input" className="modal__label">
-            Person Name
+            Person Name *
             <input
               id="edit-person-name-input"
               type="text"
@@ -27,10 +53,10 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
             <span className="modal__error"></span>
             <span className="modal__error"></span>
           </label>
-          <label htmlFor="edit-person-nickname-input" className="modal__label">
-            Nickname (optional)
+          <label htmlFor="edit-person-relationship-input" className="modal__label">
+            Relationship
             <input
-              id="edit-person-nickname-input"
+              id="edit-person-relationship-input"
               type="text"
               className="modal__input"
               name="name"
@@ -40,7 +66,7 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
             />
           </label>
           <label htmlFor="edit-person-avatar" className="modal__label">
-            Avatar (optional)
+            Avatar
             <input
               id="edit-person-avatar"
               type="url"
@@ -49,11 +75,13 @@ function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
               placeholder=""
             />
           </label>
-          <button className="modal__btn modal__btn-cancel">
-            <img src="" alt="Cross mark" className="modal__cancel-btn-image" />
-            Cancel
-          </button>
-          <button className="modal__btn modal__btn-save">Save</button>
+          <div className="modal__edit-person-buttons" style={EditPersonModalStyles.buttonsContainer}>
+            <button className="modal__btn modal__btn-cancel">
+              <img src="" alt="Cross mark" className="modal__cancel-btn-image" />
+              Cancel
+            </button>
+            <button className="modal__btn modal__btn-create">Create</button>
+          </div>
         </form>
       </div>
     </div>

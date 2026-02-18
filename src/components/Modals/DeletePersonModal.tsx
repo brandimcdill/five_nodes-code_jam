@@ -59,11 +59,11 @@ function DeletePersonModal({ modal, handleDeleteConnectionClick, closeModal }) {
             className="modal__delete-person-name"
           ></span>? This will delete all memories associated with this person.
         </p>
-        <div className="modal__delete-person-buttons" style={DeletePersonModalStyles.buttonsContainer}>
-          <button className="modal__btn modal__btn-delete-cancel" style={DeletePersonModalStyles.buttonCancel}>
+        <div className="modal__delete-person-buttons" style={DeletePersonModalStyles.buttonsContainer} onClick={handleDeleteConnectionClick}>
+          <button className="modal__btn modal__btn-delete-cancel" style={DeletePersonModalStyles.buttonCancel} onClick={handleDeleteConnectionClick}>
             <img src="" alt="Cross mark" className="modal__btn-cancel-delete" />
             Cancel</button>
-          <button className="modal__btn modal__btn-delete" style={DeletePersonModalStyles.buttonSave}>Save</button>
+          <button className="modal__btn modal__btn-delete" style={DeletePersonModalStyles.buttonSave} onClick={closeModal}>Save</button>
         </div>
       </div>
       
