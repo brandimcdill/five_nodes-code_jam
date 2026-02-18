@@ -1,17 +1,57 @@
-import { useState } from "react";
-import Calendar from "react-calendar";
+import { Eventcalendar, getJson, setOptions, Toast } from '@mobiscroll/react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
-function CalendarComponent({ onChange, activeModal, selectedCard, value, handleNewMemory }) {
-  const [date, setDate] = useState(value);
-  const config = useState({
-    onChange: setDate,
-    viewType: "week",
-    value: date,
-  });
+setOptions({
+  theme: 'ios',
+  themeVariant: 'light'
+});
+
+function CalendarComponent() {
+  const [myEvents, setEvents] = useState([]);
+  const [isToastOpen, setToastOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState();
+
+  const myView = useMemo(
+    () => ({
+      calendar: { type: 'month' },
+      agenda: { type: 'month' },
+    }),
+    [],
+  );
+
+  const handleToastClose = useCallback(() => {
+    setToastOpen(false);
+  }, []);
+
+  const handleEventClick = useCallback((args) => {
+    setToastMessage(args.event.title);
+    setToastOpen(true);
+  }, []);
+
+  useEffect(() => {
+    getJson(
+      'https://trial.mobiscroll.com/events/?vers=5',
+      (events) => {
+        setEvents(events);
+      },
+      'jsonp',
+    );
+  }, []);
+
   return (
-    <div className="calendar-container">
-      
-    </div>
+    <>
+      <Eventcalendar
+        clickToCreate={false}
+        dragToCreate={false}
+        dragToMove={false}
+        dragToResize={false}
+        eventDelete={false}
+        data={myEvents}
+        view={myView}
+        onEventClick={handleEventClick}
+      />
+      <Toast message={toastMessage} isOpen={isToastOpen} onClose={handleToastClose} />
+    </>
   );
 }
 export default CalendarComponent;

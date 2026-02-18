@@ -74,6 +74,10 @@ export default function App() {
     setSelectedCard(null);
   };
 
+  const handleCreatePersonClick = () => {
+    setActiveModal("createPerson");
+  };
+
   const handleEditConnectionClick = (card: Person) => {
     setSelectedCard(card);
     setActiveModal("editPerson");
