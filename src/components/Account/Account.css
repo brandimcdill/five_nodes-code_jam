@@ -1,7 +1,12 @@
-.acct-form{
-     display: flex;
+.acct-form {
+  display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
-  background-color: #DDCEA7;
+  background-color: #ddcea7;
+}
+.payment .payment-method-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
 }

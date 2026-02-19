@@ -162,9 +162,10 @@ export default function App() {
   return (
     <div className="page">
       <div className="page__content">
-        <Header />
+        
         <NavBar />
         <Routes>
+          <Route path="/" element={<Header/>} />
           <Route path="/landing" element={<Landing />} />
           <Route
             path="/"

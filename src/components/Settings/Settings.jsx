@@ -4,6 +4,14 @@ import paper_plane from "../../assets/paper_plane.svg";
 import paper_ball from "../../assets/paper_ball.svg";
 import ToggleSwitch_theme from "../ToggleSwitch_theme/ToggleSwitch_theme";
 import ToggleSwitch_basic from "../ToggleSwitch_basic/ToggleSwitch_basic";
+import gen_icon from "../../assets/gen_icon.svg";
+import notif_icon from "../../assets/notif_icon.svg";
+import pdf_icon from "../../assets/pdf_icon.svg";
+import faq_icon from "../../assets/faq_icon.svg";
+import email_icon from "../../assets/email_icon.svg";
+import ques_icon from "../../assets/ques_icon.svg";
+import talk_icon from "../../assets/talk_icon.svg";
+import arrow_icon from "../../assets/arrow_icon.svg";
 
 const options = [
   { value: "paper-plane", label: "Paper Airplane", imageUrl: paper_plane },
@@ -20,7 +28,14 @@ function Settings() {
       <h1>Settings</h1>
       <p>Manage your workplace preferences and account details.</p>
       <section className="section-container">
-        <h2 className="section-title">General</h2>
+        <h2 className="section-title">
+          <img
+            src={gen_icon}
+            alt="General settings icon"
+            className="section-icon"
+          />
+          General
+        </h2>
         <div className="section-header">
           <h3 className="section-header">Theme</h3>
           <p className="section-description">
@@ -39,7 +54,14 @@ function Settings() {
         </div>
       </section>
       <section className="section-container">
-        <h2 className="section-title">Notifications</h2>
+        <h2 className="section-title">
+          <img
+            src={notif_icon}
+            alt="Notification settings icon"
+            className="section-icon"
+          />
+          Notifications
+        </h2>
         <div className="section-group">
           <h3 className="section-header">Daily Reflection Reminder</h3>
           <p className="section-description">
@@ -63,7 +85,14 @@ function Settings() {
         </div>
       </section>
       <section className="section-container">
-        <h2 className="section-title">PDF Export Style</h2>
+        <h2 className="section-title">
+          <img
+            src={pdf_icon}
+            alt="PDF export settings icon"
+            className="section-icon"
+          />
+          PDF Export Style
+        </h2>
         <p className="section-description">
           Choose how your monthly thoughts are folded and presented in exported
           PDFs.
@@ -81,6 +110,44 @@ function Settings() {
               <p> {option.label}</p>
             </label>
           ))}
+        </div>
+      </section>
+      <section className="section-container">
+        <div className="section-container">
+          <h2 className="section-title">
+            <img
+              src={faq_icon}
+              alt="FAQ settings icon"
+              className="section-icon"
+            />
+            Support & FAQs
+          </h2>
+          <h3 className="section-header">
+            <img src={ques_icon} alt="Help Center" className="section-icon" />
+            Help Center{" "}
+            <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
+          </h3>
+          <h3 className="section-header">
+            <img src={talk_icon} alt="Contact Us" className="section-icon" />
+            Contact Us{" "}
+            <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
+          </h3>
+        </div>
+      </section>
+      <section className="section-container">
+        <div className="section-container">
+          <h2 className="section-title">
+            <img
+              src={email_icon}
+              alt="Subscription settings icon"
+              className="section-icon"
+            />
+            Subscriptions
+          </h2>
+          <h3 className="section-header">
+            Marketing Subscriptions
+            <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
+          </h3>
         </div>
       </section>
       <button type="button" className="cancel-button">
