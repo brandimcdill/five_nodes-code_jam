@@ -1,6 +1,6 @@
 import "./ConnectionModal.css";
 import Calendar from "../Calendar/Calendar";
-import { config } from "next/dist/build/templates/pages";
+// import { config } from "next/dist/build/templates/pages";
 function ConnectionModal({ selectedCard, onClose, activeModal, date, onChange }) {
   if (!selectedCard) return null;
   return (

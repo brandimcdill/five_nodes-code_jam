@@ -17,9 +17,9 @@ function People({
       <h2 className="people__title">Your Connections</h2>
       <p className="people__subtitle">Manage your connections with the people in your life</p>
       </div>
-      <button className="people__settings-btn">
-        <FaEllipsisH className="people__settings-icon" />
-      </button>
+      {/* <button className="people__settings-btn" onClick={handleAddNewConnection}>
+        + Add New Connection
+      </button> */}
       </div>
       <ul className="cards__list">
         {people.map((person) => (

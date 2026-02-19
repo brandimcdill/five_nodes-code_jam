@@ -1,8 +1,15 @@
 .navbar {
   position: fixed;
+<<<<<<< HEAD
   top: 0;
   width: 100%;
   display: flex;
+=======
+  top: 0px;
+  width: 100%;
+  display: flex;
+
+>>>>>>> 4af81fbd17910e1e2a75787bd3fbdd2a0e5df582
   justify-content: flex-end;
   z-index: 1000;
   padding: 5px;
