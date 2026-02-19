@@ -178,7 +178,18 @@ export default function App() {
         
         <NavBar />
         <Routes>
-          <Route path="/" element={<Header/>} />
+          <Route path="/" element={
+            <><Header/>
+        <People
+          handleDeleteConnectionClick={handleDeleteConnectionClick}
+          onClick={handleCardClick}
+          handleEditConnectionClick={handleEditConnectionClick}
+          handleEditPersonClick={handleEditPersonClick}
+          handleNewMemoryClick={handleNewMemoryClick}
+          handleCreatePersonClick={handleCreatePersonClick}
+          handleAddNewConnection={handleAddNewConnection}
+        />
+        </>} />
           <Route path="/landing" element={<Landing />} />
           {/* <Route
             path="/"
@@ -197,15 +208,7 @@ export default function App() {
           <Route path="/account" element={<Account />} />
         </Routes>
 
-        <People
-          handleDeleteConnectionClick={handleDeleteConnectionClick}
-          onClick={handleCardClick}
-          handleEditConnectionClick={handleEditConnectionClick}
-          handleEditPersonClick={handleEditPersonClick}
-          handleNewMemoryClick={handleNewMemoryClick}
-          handleCreatePersonClick={handleCreatePersonClick}
-          handleAddNewConnection={handleAddNewConnection}
-        />
+        
 
         <Footer />
 
