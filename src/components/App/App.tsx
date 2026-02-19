@@ -83,6 +83,11 @@ export default function App() {
     setSelectedCard(card);
     setActiveModal("addConnection");
   };
+  const handleModalOverlayClick = (e) => {
+    e.currentTarget === e.target
+      ? closeActiveModal()
+      : console.log("not closed");
+  };
 
   const handleAddNewConnection = (
     name: string,
@@ -203,26 +208,31 @@ export default function App() {
           modal={activeModal}
           closeModal={handleModalClose}
           handleEditPersonClick={handleEditPersonClick}
+          handleOverlayClick={handleModalOverlayClick}
         />
         <CreatePersonModal
           modal={activeModal}
           handleAddNewConnection={handleAddNewConnection}
           closeModal={handleModalClose}
+          handleOverlayClick={handleModalOverlayClick}
         />
         <DeletePersonModal
           modal={activeModal}
           handleDeleteConnectionClick={handleDeleteConnectionClick}
           closeModal={handleModalClose}
+          handleOverlayClick={handleModalOverlayClick}
         />
         <CreateMemoryModal
           modal={activeModal}
           handleNewMemory={handleNewMemory}
           closeModal={handleModalClose}
+          handleOverlayClick={handleModalOverlayClick}
         />
         <ConnectionModal
           selectedCard={selectedCard}
           activeModal={activeModal}
           date={date}
+          handleOverlayClick={handleModalOverlayClick}
         />
       </div>
     </div>
