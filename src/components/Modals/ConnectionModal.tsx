@@ -1,5 +1,5 @@
 import "./ConnectionModal.css";
-import Calendar from "../Calendar/Calendar";
+// import Calendar from "../Calendar/Calendar";
 function ConnectionModal({ selectedCard, onClose, activeModal, date, onChange }) {
   if (!selectedCard) return null;
   return (
@@ -21,13 +21,13 @@ function ConnectionModal({ selectedCard, onClose, activeModal, date, onChange })
             <p className="calendar__title">best friend</p>
           </div>
         </div>
-        <Calendar
+        {/* <Calendar
         {...config}
         onChange={onChange}
         value={date}
         activeModal={activeModal}
         selectedCard={selectedCard}
-      />
+      /> */}
     </section>
   )};
   export default ConnectionModal;

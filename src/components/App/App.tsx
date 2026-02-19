@@ -5,7 +5,7 @@ import People from "../People/People";
 import Footer from "../Footer/Footer";
 import Landing from "../Landing/Landing";
 import NavBar from "../NavBar/NavBar";
-import CalendarComponent from "../Calendar/Calendar";
+// import Calendar from "../Calendar/Calendar";
 import Settings from "../Settings/Settings";
 import Account from "../Account/Account";
 
@@ -167,10 +167,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Header/>} />
           <Route path="/landing" element={<Landing />} />
-          <Route
+          {/* <Route
             path="/"
             element={
-              <CalendarComponent
+              <Calendar
                 onChange={setDate}
                 activeModal={activeModal}
                 selectedCard={selectedCard}
@@ -178,7 +178,7 @@ export default function App() {
                 handleNewMemory={handleNewMemory}
               />
             }
-          />
+          /> */}
           <Route path="/settings" element={<Settings />} />
           <Route path="/account" element={<Account />} />
         </Routes>
