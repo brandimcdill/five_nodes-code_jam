@@ -87,6 +87,12 @@ export default function App() {
     setActiveModal("addConnection");
   };
 
+  const handleModalOverlayClick = (e) => {
+    e.currentTarget === e.target
+      ? setActiveModal("")
+      : console.log("not closed");
+  };
+
   const handleAddNewConnection = (
     name: string,
     relationship: string,
@@ -193,11 +199,12 @@ export default function App() {
 
         <People
           handleDeleteConnectionClick={handleDeleteConnectionClick}
-          selectedCard={selectedCard}
-          handleCardClick={handleCardClick}
           onClick={handleCardClick}
           handleEditConnectionClick={handleEditConnectionClick}
+          handleEditPersonClick={handleEditPersonClick}
           handleNewMemoryClick={handleNewMemoryClick}
+          handleCreatePersonClick={handleCreatePersonClick}
+          handleAddNewConnection={handleAddNewConnection}
         />
 
         <Footer />
@@ -206,26 +213,31 @@ export default function App() {
           modal={activeModal}
           closeModal={handleModalClose}
           handleEditPersonClick={handleEditPersonClick}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
         <CreatePersonModal
           modal={activeModal}
           handleAddNewConnection={handleAddNewConnection}
           closeModal={handleModalClose}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
         <DeletePersonModal
           modal={activeModal}
           handleDeleteConnectionClick={handleDeleteConnectionClick}
           closeModal={handleModalClose}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
         <CreateMemoryModal
           modal={activeModal}
           handleNewMemory={handleNewMemory}
           closeModal={handleModalClose}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
         <ConnectionModal
           selectedCard={selectedCard}
           activeModal={activeModal}
           date={date}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
       </div>
     </div>

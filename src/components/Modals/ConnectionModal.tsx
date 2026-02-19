@@ -1,4 +1,4 @@
-import "./ConnectionModal.css";
+import "./ModalWithForm.css";
 // import Calendar from "../Calendar/Calendar";
 function ConnectionModal({ selectedCard, onClose, activeModal, date, onChange }) {
   if (!selectedCard) return null;
