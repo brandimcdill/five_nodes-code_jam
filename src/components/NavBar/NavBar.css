@@ -1,28 +1,27 @@
 .navbar {
   position: fixed;
-  top: 10px;
+  top: 0;
   width: 100%;
   display: flex;
-  right: 10px;
   justify-content: flex-end;
   z-index: 1000;
-  padding: 5px; 
+  padding: 5px;
   background-color: #f8d120;
   line-height: 24px;
 }
 .navbar__container {
   display: flex;
   line-height: 24px;
- align-items: center;
+  align-items: center;
 }
-.logo__container{
+.logo__container {
   left: 0;
   display: flex;
   align-items: left;
   padding-left: 20px;
   position: absolute;
 }
-.logo__title{
+.logo__title {
   margin: 0;
   font-family: "Poppins", sans-serif;
   font-size: 20px;
