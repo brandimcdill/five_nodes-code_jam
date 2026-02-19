@@ -31,7 +31,6 @@ function ConnectionModal({ selectedCard, onClose, activeModal, date, onChange })
         activeModal={activeModal}
         selectedCard={selectedCard}
       />
-        // Actual calendar can be inserted here //
-       </section>
+    </section>
   )};
   export default ConnectionModal;

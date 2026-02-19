@@ -83,11 +83,11 @@ function Settings() {
           ))}
         </div>
       </section>
-      <button type="submit" className="save-button">
-        Save Changes
-      </button>
       <button type="button" className="cancel-button">
         Cancel
+      </button>
+      <button type="submit" className="save-button">
+        Save
       </button>
     </form>
   );

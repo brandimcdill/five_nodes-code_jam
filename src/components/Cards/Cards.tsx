@@ -26,13 +26,17 @@ function Cards({ onclick, card, handleCardClick, handleEditConnectionClick }) {
             <p className="card__relationship">{card.relationship}</p>
           </div>
         </div>
+<<<<<<< HEAD
         <div className="cards__save-btn">
           <button className="cards__button-save">
+=======
+        <div>
+          <button className="cards__button-save" onClick={handleClick}>
+>>>>>>> f0d3833c28a4811533aeef1af3f485160c95fa2f
             <img
               src={paper_plane}
               alt="Paper Plane Icon"
               className="cards__button-calendar"
-              onClick={handleCardClick}
             />
             Open
           </button>
