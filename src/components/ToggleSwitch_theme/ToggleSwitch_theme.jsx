@@ -1,12 +1,22 @@
-import './ToggleSwitch_theme.css';
+import "./ToggleSwitch_theme.css";
 
-function ToggleSwitch({  }) {
-    return (
-        <label className="toggle-switch">
-            <input type="checkbox" id="toggle" className="toggle-switch__checkbox" />
-            <span className="toggle-switch__rectangle"></span>
-            <span className="toggle-switch__text-light">Light</span>
-            <span className="toggle-switch__text-dark">Dark</span>
-        </label>)}
+function ToggleSwitch({}) {
+  return (
+    <label className="toggle_switch-theme">
+      <input
+        type="checkbox"
+        id="toggle"
+        className="toggle_switch-theme__checkbox"
+      />
+      <span className="toggle_switch-theme__square"></span>
+      <span className="toggle_switch-theme__text toggle_switch-theme__text-light">
+        Light
+      </span>
+      <span className="toggle_switch-theme__text toggle_switch-theme__text-dark">
+        Dark
+      </span>
+    </label>
+  );
+}
 
 export default ToggleSwitch;

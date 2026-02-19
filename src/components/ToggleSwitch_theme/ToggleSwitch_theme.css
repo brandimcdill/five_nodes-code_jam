@@ -1,40 +1,50 @@
-.toggle_switch{
-    width: 60px;
-    height: 30px;
-    position: relative; 
-    border: 2px solid #7e7e7e;
-    border-radius: 5px;
-    cursor: pointer;
+.toggle_switch-theme {
+  position: relative;
+  border: 2px solid #bdbcbc;
+  cursor: pointer;
+  overflow: hidden;
+  width: 60px;
+  height: 25px;
+  margin: 0;
+  border-radius: 5px;
+  padding: 3px;
+  display: inline-block;
+  background-color: #bdbcbc;
+}
+.toggle_switch-theme:hover {
+  border: 2px solid rgb(246, 8, 111);
+}
 
+.toggle_switch-theme__checkbox {
+  opacity: 0;
 }
-.toggle_switch:hover{
-    border: 2px solid rgb(246, 8, 111);
+.toggle_switch-theme__checkbox:checked ~ .toggle_switch-theme__square {
+  left: 35px;
 }
-.toggle_switch__checkbox{
-    opacity: 0;
+.toggle_switch-theme__square {
+  background-color: white;
+  width: 30px;
+  height: 25px;
+  position: absolute;
+  left: 0;
+  transition: all 0.25s;
+  border-radius: 5px;
 }
-.toggle_switch__checkbox{
-   background-color: grey;
-   width: 30px;
-    height: 30px;
-    position: absolute;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    left: 0;
+.toggle_switch-theme__text {
+  position: absolute;
+  top: 30%;
+  font-size: 12px;
+  font-family:
+    DM Sans,
+    sans-serif;
+  font-weight: 500;
+  line-height: 1;
+  color: #000;
+  border-style: none;
 }
-.toggle_switch__text{
-    position: absolute;
-    top: 30%;
-    font-size: 12px;
-    font-family: DM Sans, sans-serif;
-    font-weight: 500;
-    line-height: 1;
+.toggle_switch-theme__text-light {
+  left: 3px;
 }
-.toggle_switch__text-light{
-    left: 5px;
-    color: #000;
-}   
-.toggle_switch__text-dark{
-    right: 5px;
-    color: #fff;
+.toggle_switch-theme__text-dark {
+  right: 3px;
 }
