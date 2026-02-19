@@ -8,10 +8,7 @@ function CreateMemoryModal({ modal }) {
       className={`modal ${modal === "createMemory" ? "modal_opened" : ""}`}
         id="create-new-memory">
       <section className="entry">
-        <button className="entry__btn_back">
-          <img src="" alt="Entry arrow" className="entry-arrow" />
-        Back
-        </button>
+        <h3 class="entry__date">Thursday, February 19</h3>
         <div className="entry__entry-container">
           <p className="entry__date"></p>
           <p className="entry__title">New Memory</p>
@@ -39,17 +36,17 @@ function CreateMemoryModal({ modal }) {
             />
           </label>
           <label htmlFor="entry-image-link-input" className="entry__image">
-
-            <img src="" alt="Paper clip image" className="entry__image-paperclip" />
+          Image
             <input 
               id="entry-image-input"
               type="url" 
               className="entry__image-input"
-              name="link"/>
+              name="link"
+              placeholder="https://..."
+            />
           </label>
           <label htmlFor="entry-gift-card-input" className="entry__gift-card">
-
-            <img src="Gift Card" alt="Camera image" className="entry__gift-card-camera" />
+            Scan Gift Card
             <input 
               id="entry-gift-card-input"
               type="text" 
@@ -59,10 +56,12 @@ function CreateMemoryModal({ modal }) {
               maxLength={20} 
             />
           </label>
-          <button className="modal__btn entry__btn-cancel">
+          <div className="entry__btn-container">
+            <button className="modal__btn entry__btn-cancel">
             <IoClose className="entry__btn-cancel-image" />
             Cancel</button>
           <button className="modal__btn entry__btn-save">Save</button>
+          </div>
         </div>
       </section>
     </div>
