@@ -8,7 +8,7 @@ function CreateMemoryModal({ modal }) {
       className={`modal ${modal === "createMemory" ? "modal_opened" : ""}`}
         id="create-new-memory">
       <section className="entry">
-        <h3 class="entry__date">Thursday, February 19</h3>
+        <h3 className="entry__date">Thursday, February 19</h3>
         <div className="entry__entry-container">
           <p className="entry__date"></p>
           <p className="entry__title">New Memory</p>
