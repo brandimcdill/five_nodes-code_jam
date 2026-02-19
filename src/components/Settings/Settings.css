@@ -60,3 +60,40 @@
   height: 30px;
   align-self: center;
 }
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel-button {
+  background-color: white;
+  border: none;
+  color: black;
+  cursor: pointer;
+  padding: 0;
+  width: 60px;
+  height: 36px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Jaro", sans-serif;
+  border: 2px solid black;
+}
+.cancel-button:hover {
+  background-color: #e94eae;
+}
+.save-button {
+  background-color: black;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  width: 60px;
+  height: 36px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Jaro", sans-serif;
+}
+.save-button:hover {
+  background-color: #e94eae;
+}

@@ -18,11 +18,11 @@ function Account() {
             src={data_icon}
             alt="Personal Data icon"
             className="section-icon"
-          />{" "}
+          />
           Personal Data
         </h2>
         <label>
-          First Name{" "}
+          First Name
           <input
             type="text"
             name="firstName"
@@ -31,7 +31,7 @@ function Account() {
           />
         </label>
         <label>
-          Last Name{" "}
+          Last Name
           <input
             type="text"
             name="lastName"
@@ -40,7 +40,7 @@ function Account() {
           />
         </label>
         <label>
-          Email{" "}
+          Email
           <input
             type="email"
             name="email"
@@ -112,13 +112,14 @@ function Account() {
           Privacy
         </h2>
 
+        <h3 className="section_sub-header">Payment Method</h3>
         <div className="payment-method-container">
-          <h3 className="section_sub-header">Payment Method</h3>
           <img
             src={card_icon}
             alt="credit card icon"
             className="payment-method-icon"
           />
+          <p className="payment-method-description">Visa *******6121</p>
         </div>
         <h3 className="section_sub-header_delete">Danger Zone</h3>
         <p className="section-description">
@@ -129,12 +130,14 @@ function Account() {
           Delete Account
         </button>
       </section>
-      <button type="button" className="cancel-button">
-        Cancel
-      </button>
-      <button type="submit" className="save-button">
-        Save
-      </button>
+      <div className="button-container">
+        <button type="button" className="cancel-button">
+          Cancel
+        </button>
+        <button type="submit" className="save-button">
+          Save
+        </button>
+      </div>
     </form>
   );
 }
