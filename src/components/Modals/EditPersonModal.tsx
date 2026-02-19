@@ -2,10 +2,12 @@ import "./ModalWithForm.css";
 import { MdCancel } from "react-icons/md";
 
 
-function EditPersonModal({ modal, closeModal, handleEditPersonClick}) {
+function EditPersonModal({ modal, closeModal, handleEditPersonClick, handleModalOverlayClick }) {
+  
   return (
     <div
       className={`modal ${modal === "editPerson" ? "modal_opened" : ""}`}
+      onClick={handleModalOverlayClick}
       id="edit-person"
     >
       <div className="modal__container">

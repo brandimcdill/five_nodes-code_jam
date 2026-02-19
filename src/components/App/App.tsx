@@ -86,9 +86,10 @@ export default function App() {
     setSelectedCard(card);
     setActiveModal("addConnection");
   };
+
   const handleModalOverlayClick = (e) => {
     e.currentTarget === e.target
-      ? closeActiveModal()
+      ? setActiveModal("")
       : console.log("not closed");
   };
 
@@ -177,7 +178,18 @@ export default function App() {
         
         <NavBar />
         <Routes>
-          <Route path="/" element={<Header/>} />
+          <Route path="/" element={
+            <><Header/>
+        <People
+          handleDeleteConnectionClick={handleDeleteConnectionClick}
+          onClick={handleCardClick}
+          handleEditConnectionClick={handleEditConnectionClick}
+          handleEditPersonClick={handleEditPersonClick}
+          handleNewMemoryClick={handleNewMemoryClick}
+          handleCreatePersonClick={handleCreatePersonClick}
+          handleAddNewConnection={handleAddNewConnection}
+        />
+        </>} />
           <Route path="/landing" element={<Landing />} />
           {/* <Route
             path="/"
@@ -196,14 +208,7 @@ export default function App() {
           <Route path="/account" element={<Account />} />
         </Routes>
 
-        <People
-          handleDeleteConnectionClick={handleDeleteConnectionClick}
-          selectedCard={selectedCard}
-          handleCardClick={handleCardClick}
-          onClick={handleCardClick}
-          handleEditConnectionClick={handleEditConnectionClick}
-          handleNewMemoryClick={handleNewMemoryClick}
-        />
+        
 
         <Footer />
 
@@ -211,31 +216,31 @@ export default function App() {
           modal={activeModal}
           closeModal={handleModalClose}
           handleEditPersonClick={handleEditPersonClick}
-          handleOverlayClick={handleModalOverlayClick}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
         <CreatePersonModal
           modal={activeModal}
           handleAddNewConnection={handleAddNewConnection}
           closeModal={handleModalClose}
-          handleOverlayClick={handleModalOverlayClick}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
         <DeletePersonModal
           modal={activeModal}
           handleDeleteConnectionClick={handleDeleteConnectionClick}
           closeModal={handleModalClose}
-          handleOverlayClick={handleModalOverlayClick}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
         <CreateMemoryModal
           modal={activeModal}
           handleNewMemory={handleNewMemory}
           closeModal={handleModalClose}
-          handleOverlayClick={handleModalOverlayClick}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
         <ConnectionModal
           selectedCard={selectedCard}
           activeModal={activeModal}
           date={date}
-          handleOverlayClick={handleModalOverlayClick}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
       </div>
     </div>
