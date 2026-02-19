@@ -1,6 +1,6 @@
 import "./Settings.css";
 import paper_page from "../../assets/paper_page.svg";
-import paper_plane from "../../assets/paper_plane.svg";
+import paper_plane_black from "../../assets/paper_plane_black.svg";
 import paper_ball from "../../assets/paper_ball.svg";
 import ToggleSwitch_theme from "../ToggleSwitch_theme/ToggleSwitch_theme";
 import ToggleSwitch_basic from "../ToggleSwitch_basic/ToggleSwitch_basic";
@@ -14,7 +14,11 @@ import talk_icon from "../../assets/talk_icon.svg";
 import arrow_icon from "../../assets/arrow_icon.svg";
 
 const options = [
-  { value: "paper-plane", label: "Paper Airplane", imageUrl: paper_plane },
+  {
+    value: "paper-plane",
+    label: "Paper Airplane",
+    imageUrl: paper_plane_black,
+  },
   { value: "paper-page", label: "Paper Page", imageUrl: paper_page },
   {
     value: "crumbled-paper-ball",
@@ -38,19 +42,23 @@ function Settings() {
         </h2>
         <div className="section-header">
           <h3 className="section-header">Theme</h3>
-          <p className="section-description">
-            Select your preferred interface appearance.
-          </p>
-          <ToggleSwitch_theme />
+          <div className="selection-container">
+            <p className="section-description">
+              Select your preferred interface appearance.
+            </p>
+            <ToggleSwitch_theme />
+          </div>
         </div>
         <div className="language">
           <h3 className="section-header">Language</h3>
-          <p className="section-description">
-            Choose the language for the interface.
-          </p>
-          <select className="language-select">
-            <option value="en">English</option>
-          </select>
+          <div className="selection-container">
+            <p className="section-description">
+              Choose the language for the interface.
+            </p>
+            <select className="language-select">
+              <option value="en">English</option>
+            </select>
+          </div>
         </div>
       </section>
       <section className="section-container">
@@ -64,24 +72,30 @@ function Settings() {
         </h2>
         <div className="section-group">
           <h3 className="section-header">Daily Reflection Reminder</h3>
-          <p className="section-description">
-            Get a gentle nudge to unfold your thoughts.
-          </p>
-          <ToggleSwitch_basic />
+          <div className="selection-container">
+            <p className="section-description">
+              Get a gentle nudge to unfold your thoughts.
+            </p>
+            <ToggleSwitch_basic />
+          </div>
         </div>
         <div className="weekly-summary">
           <h3 className="section-header">Weekly Wrap-up</h3>
-          <p className="section-description">
-            A summary of your thought patterns every Sunday
-          </p>
-          <ToggleSwitch_basic />
+          <div className="selection-container">
+            <p className="section-description">
+              A summary of your thought patterns every Sunday
+            </p>
+            <ToggleSwitch_basic />
+          </div>
         </div>
         <div className="new-feature-updates">
           <h3 className="section-header">New Feature Announcements</h3>
-          <p className="section-description">
-            Updates about the Paper thought platform.
-          </p>
-          <ToggleSwitch_basic />
+          <div className="selection-container">
+            <p className="section-description">
+              Updates about the Paper thought platform.
+            </p>
+            <ToggleSwitch_basic />
+          </div>
         </div>
       </section>
       <section className="section-container">
@@ -100,54 +114,60 @@ function Settings() {
         <div className="pdf-style-options">
           {options.map((option) => (
             <label className="section-header" key={option.value}>
-              <input
-                className="pdf-style-radio"
-                type="radio"
-                name="paper-group"
-                value={option.value}
-              />
-              <img src={option.imageUrl} alt={option.label} />
-              <p> {option.label}</p>
+              <div className="pdf-option-container">
+                <img
+                  src={option.imageUrl}
+                  alt={option.label}
+                  className="pdf-image"
+                />
+                <p> {option.label}</p>
+                <input
+                  className="pdf-style-radio"
+                  type="radio"
+                  name="paper-group"
+                  value={option.value}
+                />
+              </div>
             </label>
           ))}
         </div>
       </section>
       <section className="section-container">
-        <div className="section-container">
-          <h2 className="section-title">
-            <img
-              src={faq_icon}
-              alt="FAQ settings icon"
-              className="section-icon"
-            />
-            Support & FAQs
-          </h2>
-          <h3 className="section-header">
+        <h2 className="section-title">
+          <img
+            src={faq_icon}
+            alt="FAQ settings icon"
+            className="section-icon"
+          />
+          Support & FAQs
+        </h2>
+        <div className="selection-container">
+          <p className="section-header">
             <img src={ques_icon} alt="Help Center" className="section-icon" />
-            Help Center{" "}
-            <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
-          </h3>
-          <h3 className="section-header">
+            Help Center
+          </p>
+          <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
+        </div>
+        <div className="selection-container">
+          <p className="section-header">
             <img src={talk_icon} alt="Contact Us" className="section-icon" />
-            Contact Us{" "}
-            <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
-          </h3>
+            Contact Us
+          </p>
+          <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
         </div>
       </section>
       <section className="section-container">
-        <div className="section-container">
-          <h2 className="section-title">
-            <img
-              src={email_icon}
-              alt="Subscription settings icon"
-              className="section-icon"
-            />
-            Subscriptions
-          </h2>
-          <h3 className="section-header">
-            Marketing Subscriptions
-            <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
-          </h3>
+        <h2 className="section-title">
+          <img
+            src={email_icon}
+            alt="Subscription settings icon"
+            className="section-icon"
+          />
+          Subscriptions
+        </h2>
+        <div className="selection-container">
+          <p className="section-header">Marketing Subscriptions</p>
+          <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
         </div>
       </section>
       <button type="button" className="cancel-button">

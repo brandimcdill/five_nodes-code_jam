@@ -1,26 +1,20 @@
-import { useState } from 'react';
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
-import interactionPlugin from '@fullcalendar/interaction'
+// import "./Calendar.css";
 
-function CalendarComponent() {
-  return (
-    <FullCalendar
-      plugins={[dayGridPlugin, interactionPlugin]}
-      initialView="dayGridMonth"
-      headerToolbar={{
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth'
-      }}
-      height="auto"
-      events={[
-        { title: 'Event 1', date: '2026-02-18' },
-        { title: 'Event 2', date: '2026-02-20' }
-      ]}
-    />
-  )
-}
+// // AI Help
 
-export default CalendarComponent
-// AI Help ends
+// import React, { useState } from "react";
+// import Calendar from "react-calendar";
+// import "react-calendar/dist/Calendar.css";
+
+// // function MyCalendar() {
+// //   const [date, setDate] = useState(new Date());
+
+// //   return (
+// //     <div className="react-calendar__container">
+// //       <Calendar onChange={setDate} value={date} />
+// //     </div>
+// //   );
+// // }
+
+// // export default MyCalendar;
+// // AI Help ends
