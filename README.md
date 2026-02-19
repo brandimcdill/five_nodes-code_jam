@@ -10,14 +10,14 @@ This app was built using React, CSS, and TypeScript
 
 ## UX/UI designers
 
-Shera Morris
-Julio Coraspe
+- Shera Morris
+- Julio Coraspe
 
 ## Software Engineers
 
-Brandi McDill
-Genevive Oliva
-Michael Watson
+- Brandi McDill
+- Genevive Oliva
+- Michael Watson
 
 [Link to Figma:] (https://www.figma.com/design/k8fXpybZENtGusfsi6ciMc/Feb-Code-Jam?node-id=112-584&p=f&t=2qjiAtp6YE7DvypP-0)
 
