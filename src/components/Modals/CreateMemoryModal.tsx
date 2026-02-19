@@ -1,4 +1,4 @@
-import "./ModalWithForm.css";
+import "./CreateMemoryModal.css";
 import { FaPaperclip } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 
