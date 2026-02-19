@@ -4,12 +4,13 @@ import { people } from "../../Utils/Constants/people";
 import { FaEllipsisH } from "react-icons/fa";
 
 function People({
-  handleCardClick,
-  selectedCard,
   handleDeleteConnectionClick,
   onClick,
   handleEditConnectionClick,
-  handleNewMemoryClick
+  handleNewMemoryClick,
+  handleEditPersonClick,
+  handleAddNewConnection,
+  handleCreatePersonClick,
 }) {
   return (
     <div className="people">
@@ -18,9 +19,7 @@ function People({
       <h2 className="people__title">Your Connections</h2>
       <p className="people__subtitle">Manage your connections with the people in your life</p>
       </div>
-      <button className="people__settings-btn">
-        <FaEllipsisH className="people__settings-icon" />
-      </button>
+      <button className="people__new-memory" onClick={handleCreatePersonClick}>+ Add New Person</button>
       </div>
       <ul className="cards__list">
         {people.map((person) => (
@@ -28,14 +27,14 @@ function People({
             key={person.id}
             card={person}
             onclick={onClick}
-            handleCardClick={handleCardClick}
             handleDeleteConnectionClick={handleDeleteConnectionClick}
             handleEditConnectionClick={handleEditConnectionClick}
+            handleEditPersonClick={handleEditPersonClick}
           />
         ))}
       </ul>
       <div className="people__new-memory-container">
-        <button className="people__new-memory" onClick={handleNewMemoryClick}>Create New Memory</button>
+        <button className="people__new-memory" onClick={handleNewMemoryClick}>+ Create New Memory</button>
       </div>
     </div>
   );

@@ -21,7 +21,6 @@ import EditPersonModal from "../Modals/EditPersonModal";
 import CreatePersonModal from "../Modals/CreatePersonModal";
 import DeletePersonModal from "../Modals/DeletePersonModal";
 import CreateMemoryModal from "../Modals/CreateMemoryModal";
-import { get } from "node:http";
 import ConnectionModal from "../Modals/ConnectionModal";
 
 // Types
@@ -74,6 +73,10 @@ export default function App() {
     setSelectedCard(null);
   };
 
+  const handleCreatePersonClick = () => {
+    setActiveModal("createPerson");
+  };
+
   const handleEditConnectionClick = (card: Person) => {
     setSelectedCard(card);
     setActiveModal("editPerson");
@@ -82,6 +85,12 @@ export default function App() {
   const handleNewConnectionClick = (card: Person) => {
     setSelectedCard(card);
     setActiveModal("addConnection");
+  };
+
+  const handleModalOverlayClick = (e) => {
+    e.currentTarget === e.target
+      ? setActiveModal("")
+      : console.log("not closed");
   };
 
   const handleAddNewConnection = (
@@ -169,7 +178,18 @@ export default function App() {
         
         <NavBar />
         <Routes>
-          <Route path="/" element={<Header/>} />
+          <Route path="/" element={
+            <><Header/>
+        <People
+          handleDeleteConnectionClick={handleDeleteConnectionClick}
+          onClick={handleCardClick}
+          handleEditConnectionClick={handleEditConnectionClick}
+          handleEditPersonClick={handleEditPersonClick}
+          handleNewMemoryClick={handleNewMemoryClick}
+          handleCreatePersonClick={handleCreatePersonClick}
+          handleAddNewConnection={handleAddNewConnection}
+        />
+        </>} />
           <Route path="/landing" element={<Landing />} />
           {/* <Route
             path="/"
@@ -188,14 +208,7 @@ export default function App() {
           <Route path="/account" element={<Account />} />
         </Routes>
 
-        <People
-          handleDeleteConnectionClick={handleDeleteConnectionClick}
-          selectedCard={selectedCard}
-          handleCardClick={handleCardClick}
-          onClick={handleCardClick}
-          handleEditConnectionClick={handleEditConnectionClick}
-          handleNewMemoryClick={handleNewMemoryClick}
-        />
+        
 
         <Footer />
 
@@ -203,26 +216,31 @@ export default function App() {
           modal={activeModal}
           closeModal={handleModalClose}
           handleEditPersonClick={handleEditPersonClick}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
         <CreatePersonModal
           modal={activeModal}
           handleAddNewConnection={handleAddNewConnection}
           closeModal={handleModalClose}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
         <DeletePersonModal
           modal={activeModal}
           handleDeleteConnectionClick={handleDeleteConnectionClick}
           closeModal={handleModalClose}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
         <CreateMemoryModal
           modal={activeModal}
           handleNewMemory={handleNewMemory}
           closeModal={handleModalClose}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
         <ConnectionModal
           selectedCard={selectedCard}
           activeModal={activeModal}
           date={date}
+          handleModalOverlayClick={handleModalOverlayClick}
         />
       </div>
     </div>

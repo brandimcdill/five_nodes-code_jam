@@ -2,12 +2,16 @@ import paper_plane from "../../assets/paper_plane_black.svg";
 import { FaPencilAlt } from "react-icons/fa";
 import { FaEllipsisH } from "react-icons/fa";
 import "./Cards.css";
+import { useState } from "react";
 
-function Cards({ onclick, card, handleCardClick, handleEditConnectionClick }) {
+function Cards({ onclick, card, handleCardClick,handleConnectionClick, handleEditConnectionClick,}) {
   const { name, relationship, avatar } = card;
   const handleClick = () => {
     handleCardClick(card);
   };
+
+  const [modal, setModal] = useState("");
+  
 
   return (
     <li className="card">
@@ -26,8 +30,8 @@ function Cards({ onclick, card, handleCardClick, handleEditConnectionClick }) {
             <p className="card__relationship">{card.relationship}</p>
           </div>
         </div>
-        <div>
-          <button className="cards__button-save" onClick={handleClick}>
+        <div className="cards__save-btn">
+          <button className="cards__button-save" onClick={handleConnectionClick}>
             <img
               src={paper_plane}
               alt="Paper Plane Icon"

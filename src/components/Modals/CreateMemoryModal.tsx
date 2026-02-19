@@ -1,8 +1,8 @@
-import "./ModalWithForm.css";
+import "./CreateMemoryModal.css";
 import { FaPaperclip } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 
-function CreateMemoryModal({ modal }) {
+function CreateMemoryModal({ modal, closeModal }) {
   return (
     <div
       className={`modal ${modal === "createMemory" ? "modal_opened" : ""}`}
@@ -57,7 +57,7 @@ function CreateMemoryModal({ modal }) {
             />
           </label>
           <div className="entry__btn-container">
-            <button className="modal__btn entry__btn-cancel">
+            <button className="modal__btn entry__btn-cancel" onClick={closeModal}>
             <IoClose className="entry__btn-cancel-image" />
             Cancel</button>
           <button className="modal__btn entry__btn-save">Save</button>
