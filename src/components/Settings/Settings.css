@@ -60,6 +60,11 @@
   height: 30px;
   align-self: center;
 }
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
 
 .cancel-button {
   background-color: white;

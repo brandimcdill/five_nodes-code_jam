@@ -170,7 +170,7 @@ function Settings() {
           <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
         </div>
       </section>
-      <div className="buttons-container">
+      <div className="button-container">
         <button type="button" className="cancel-button">
           Cancel
         </button>
