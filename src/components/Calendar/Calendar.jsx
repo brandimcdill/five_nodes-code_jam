@@ -1,3 +1,5 @@
+import "./Calendar.css";
+
 // AI Help
 
 import React, { useState } from "react";
@@ -8,7 +10,7 @@ function MyCalendar() {
   const [date, setDate] = useState(new Date());
 
   return (
-    <div>
+    <div class="react-calendar__container">
       <Calendar onChange={setDate} value={date} />
     </div>
   );
