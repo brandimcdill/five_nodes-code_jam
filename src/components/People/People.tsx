@@ -9,6 +9,7 @@ function People({
   handleDeleteConnectionClick,
   onClick,
   handleEditConnectionClick,
+  handleNewMemoryClick
 }) {
   return (
     <div className="people">
@@ -33,6 +34,7 @@ function People({
           />
         ))}
       </ul>
+      <button className="people__new-memory" onClick={handleNewMemoryClick}>Create New Memory</button>
     </div>
   );
 }
