@@ -21,7 +21,6 @@ import EditPersonModal from "../Modals/EditPersonModal";
 import CreatePersonModal from "../Modals/CreatePersonModal";
 import DeletePersonModal from "../Modals/DeletePersonModal";
 import CreateMemoryModal from "../Modals/CreateMemoryModal";
-import { get } from "node:http";
 import ConnectionModal from "../Modals/ConnectionModal";
 
 // Types
@@ -72,6 +71,10 @@ export default function App() {
   const handleModalClose = () => {
     setActiveModal("");
     setSelectedCard(null);
+  };
+
+  const handleCreatePersonClick = () => {
+    setActiveModal("createPerson");
   };
 
   const handleEditConnectionClick = (card: Person) => {
