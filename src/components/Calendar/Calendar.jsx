@@ -1,57 +1,26 @@
-import { Eventcalendar, getJson, setOptions, Toast } from '@mobiscroll/react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
-setOptions({
+
+
+
+function CalendarComponent() {
+  const [options, setOptions] = useState({
   theme: 'ios',
   themeVariant: 'light'
 });
-
-function CalendarComponent() {
-  const [myEvents, setEvents] = useState([]);
-  const [isToastOpen, setToastOpen] = useState(false);
-  const [toastMessage, setToastMessage] = useState();
-
-  const myView = useMemo(
-    () => ({
-      calendar: { type: 'month' },
-      agenda: { type: 'month' },
-    }),
-    [],
-  );
-
-  const handleToastClose = useCallback(() => {
-    setToastOpen(false);
-  }, []);
-
-  const handleEventClick = useCallback((args) => {
-    setToastMessage(args.event.title);
-    setToastOpen(true);
-  }, []);
-
-  useEffect(() => {
-    getJson(
-      'https://trial.mobiscroll.com/events/?vers=5',
-      (events) => {
-        setEvents(events);
-      },
-      'jsonp',
-    );
-  }, []);
-
   return (
-    <>
-      <Eventcalendar
-        clickToCreate={false}
-        dragToCreate={false}
-        dragToMove={false}
-        dragToResize={false}
-        eventDelete={false}
-        data={myEvents}
-        view={myView}
-        onEventClick={handleEventClick}
-      />
-      <Toast message={toastMessage} isOpen={isToastOpen} onClose={handleToastClose} />
-    </>
-  );
+    <FullCalendar
+      plugins={[dayGridPlugin, interactionPlugin]}
+      initialView="dayGridMonth"
+      events={[
+        { title: 'Event 1', date: '2026-02-18' },
+        { title: 'Event 2', date: '2026-02-20' }
+      ]}
+      {...options}
+    />
+  )
 }
 export default CalendarComponent;

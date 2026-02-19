@@ -1,5 +1,6 @@
 import "./ConnectionModal.css";
 import Calendar from "../Calendar/Calendar";
+import { config } from "next/dist/build/templates/pages";
 function ConnectionModal({ selectedCard, onClose, activeModal, date, onChange }) {
   if (!selectedCard) return null;
   return (
@@ -22,6 +23,8 @@ function ConnectionModal({ selectedCard, onClose, activeModal, date, onChange })
           </div>
         </div>
         <Calendar
+        theme="material"
+        themeVariant="light"
         {...config}
         onChange={onChange}
         value={date}
