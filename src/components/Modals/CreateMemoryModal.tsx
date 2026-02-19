@@ -7,10 +7,10 @@ function CreateMemoryModal({ modal }) {
     <div
       className={`modal ${modal === "createMemory" ? "modal_opened" : ""}`}
         id="create-new-memory">
-            <section className="entry">
+      <section className="entry">
         <button className="entry__btn_back">
-          <img src="" alt="" className="entry-arrow" />
-          Back
+          <img src="" alt="Entry arrow" className="entry-arrow" />
+        Back
         </button>
         <div className="entry__entry-container">
           <p className="entry__date"></p>
@@ -64,8 +64,8 @@ function CreateMemoryModal({ modal }) {
             Cancel</button>
           <button className="modal__btn entry__btn-save">Save</button>
         </div>
-       </section>
-       </div>
+      </section>
+    </div>
   );
 }
     export default CreateMemoryModal;

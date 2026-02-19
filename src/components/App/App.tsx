@@ -82,7 +82,7 @@ export default function App() {
   const handleNewConnectionClick = (card: Person) => {
     setSelectedCard(card);
     setActiveModal("addConnection");
-  }
+  };
 
   const handleAddNewConnection = (
     name: string,
@@ -157,6 +157,10 @@ export default function App() {
       });
   };
 
+  const handleNewMemoryClick = () => {
+    setActiveModal("createMemory");
+  };
+
   // Render
 
   return (
@@ -189,6 +193,7 @@ export default function App() {
           handleCardClick={handleCardClick}
           onClick={handleCardClick}
           handleEditConnectionClick={handleEditConnectionClick}
+          handleNewMemoryClick={handleNewMemoryClick}
         />
 
         <Footer />
@@ -217,7 +222,6 @@ export default function App() {
           selectedCard={selectedCard}
           activeModal={activeModal}
           date={date}
-
         />
       </div>
     </div>
