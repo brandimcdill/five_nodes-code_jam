@@ -42,19 +42,23 @@ function Settings() {
         </h2>
         <div className="section-header">
           <h3 className="section-header">Theme</h3>
-          <p className="section-description">
-            Select your preferred interface appearance.
-          </p>
-          <ToggleSwitch_theme />
+          <div className="selection-container">
+            <p className="section-description">
+              Select your preferred interface appearance.
+            </p>
+            <ToggleSwitch_theme />
+          </div>
         </div>
         <div className="language">
           <h3 className="section-header">Language</h3>
-          <p className="section-description">
-            Choose the language for the interface.
-          </p>
-          <select className="language-select">
-            <option value="en">English</option>
-          </select>
+          <div className="selection-container">
+            <p className="section-description">
+              Choose the language for the interface.
+            </p>
+            <select className="language-select">
+              <option value="en">English</option>
+            </select>
+          </div>
         </div>
       </section>
       <section className="section-container">
@@ -68,24 +72,30 @@ function Settings() {
         </h2>
         <div className="section-group">
           <h3 className="section-header">Daily Reflection Reminder</h3>
-          <p className="section-description">
-            Get a gentle nudge to unfold your thoughts.
-          </p>
-          <ToggleSwitch_basic />
+          <div className="selection-container">
+            <p className="section-description">
+              Get a gentle nudge to unfold your thoughts.
+            </p>
+            <ToggleSwitch_basic />
+          </div>
         </div>
         <div className="weekly-summary">
           <h3 className="section-header">Weekly Wrap-up</h3>
-          <p className="section-description">
-            A summary of your thought patterns every Sunday
-          </p>
-          <ToggleSwitch_basic />
+          <div className="selection-container">
+            <p className="section-description">
+              A summary of your thought patterns every Sunday
+            </p>
+            <ToggleSwitch_basic />
+          </div>
         </div>
         <div className="new-feature-updates">
           <h3 className="section-header">New Feature Announcements</h3>
-          <p className="section-description">
-            Updates about the Paper thought platform.
-          </p>
-          <ToggleSwitch_basic />
+          <div className="selection-container">
+            <p className="section-description">
+              Updates about the Paper thought platform.
+            </p>
+            <ToggleSwitch_basic />
+          </div>
         </div>
       </section>
       <section className="section-container">
@@ -109,7 +119,7 @@ function Settings() {
                   src={option.imageUrl}
                   alt={option.label}
                   className="pdf-image"
-                />{" "}
+                />
                 <p> {option.label}</p>
                 <input
                   className="pdf-style-radio"
@@ -131,31 +141,33 @@ function Settings() {
           />
           Support & FAQs
         </h2>
-        <p className="section-header">
-          <img src={ques_icon} alt="Help Center" className="section-icon" />
-          Help Center
+        <div className="selection-container">
+          <p className="section-header">
+            <img src={ques_icon} alt="Help Center" className="section-icon" />
+            Help Center
+          </p>
           <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
-        </p>
-        <p className="section-header">
-          <img src={talk_icon} alt="Contact Us" className="section-icon" />
-          Contact Us
+        </div>
+        <div className="selection-container">
+          <p className="section-header">
+            <img src={talk_icon} alt="Contact Us" className="section-icon" />
+            Contact Us
+          </p>
           <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
-        </p>
+        </div>
       </section>
       <section className="section-container">
-        <div className="section-container">
-          <h2 className="section-title">
-            <img
-              src={email_icon}
-              alt="Subscription settings icon"
-              className="section-icon"
-            />
-            Subscriptions
-          </h2>
-          <p className="section-header">
-            Marketing Subscriptions
-            <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
-          </p>
+        <h2 className="section-title">
+          <img
+            src={email_icon}
+            alt="Subscription settings icon"
+            className="section-icon"
+          />
+          Subscriptions
+        </h2>
+        <div className="selection-container">
+          <p className="section-header">Marketing Subscriptions</p>
+          <img src={arrow_icon} alt="Arrow icon" className="arrow-icon" />
         </div>
       </section>
       <button type="button" className="cancel-button">
