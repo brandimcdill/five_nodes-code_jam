@@ -1,5 +1,4 @@
 import "./ModalWithForm.css";
-import "./CreateMemoryModal.css";
 
 function CreatePersonModal({ modal, closeModal, handleAddNewConnection }) {
   return (
