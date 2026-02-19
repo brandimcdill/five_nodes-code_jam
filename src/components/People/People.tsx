@@ -34,7 +34,9 @@ function People({
           />
         ))}
       </ul>
-      <button className="people__new-memory" onClick={handleNewMemoryClick}>Create New Memory</button>
+      <div className="people__new-memory-container">
+        <button className="people__new-memory" onClick={handleNewMemoryClick}>Create New Memory</button>
+      </div>
     </div>
   );
 }
