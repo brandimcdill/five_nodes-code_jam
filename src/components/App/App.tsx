@@ -86,6 +86,11 @@ export default function App() {
     setSelectedCard(card);
     setActiveModal("addConnection");
   };
+  const handleModalOverlayClick = (e) => {
+    e.currentTarget === e.target
+      ? closeActiveModal()
+      : console.log("not closed");
+  };
 
   const handleModalOverlayClick = (e) => {
     e.currentTarget === e.target
@@ -216,31 +221,51 @@ export default function App() {
           modal={activeModal}
           closeModal={handleModalClose}
           handleEditPersonClick={handleEditPersonClick}
+<<<<<<< HEAD
           handleModalOverlayClick={handleModalOverlayClick}
+=======
+          handleOverlayClick={handleModalOverlayClick}
+>>>>>>> 571d6305dc97d487a533c879cbf6783237aed0c4
         />
         <CreatePersonModal
           modal={activeModal}
           handleAddNewConnection={handleAddNewConnection}
           closeModal={handleModalClose}
+<<<<<<< HEAD
           handleModalOverlayClick={handleModalOverlayClick}
+=======
+          handleOverlayClick={handleModalOverlayClick}
+>>>>>>> 571d6305dc97d487a533c879cbf6783237aed0c4
         />
         <DeletePersonModal
           modal={activeModal}
           handleDeleteConnectionClick={handleDeleteConnectionClick}
           closeModal={handleModalClose}
+<<<<<<< HEAD
           handleModalOverlayClick={handleModalOverlayClick}
+=======
+          handleOverlayClick={handleModalOverlayClick}
+>>>>>>> 571d6305dc97d487a533c879cbf6783237aed0c4
         />
         <CreateMemoryModal
           modal={activeModal}
           handleNewMemory={handleNewMemory}
           closeModal={handleModalClose}
+<<<<<<< HEAD
           handleModalOverlayClick={handleModalOverlayClick}
+=======
+          handleOverlayClick={handleModalOverlayClick}
+>>>>>>> 571d6305dc97d487a533c879cbf6783237aed0c4
         />
         <ConnectionModal
           selectedCard={selectedCard}
           activeModal={activeModal}
           date={date}
+<<<<<<< HEAD
           handleModalOverlayClick={handleModalOverlayClick}
+=======
+          handleOverlayClick={handleModalOverlayClick}
+>>>>>>> 571d6305dc97d487a533c879cbf6783237aed0c4
         />
       </div>
     </div>
